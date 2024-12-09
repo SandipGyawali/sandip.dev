@@ -1,0 +1,10 @@
+# github action work flow to deploy with vps server with nginx configuration
+# and pm2 background processor manager
+
+name: Sandip.dev
+
+on:
+  push:
+    branches: ["master"]
+  pull_request:
+    branches: ["master"]
