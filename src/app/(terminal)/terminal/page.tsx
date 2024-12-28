@@ -1,9 +1,8 @@
 "use client";
-
 import { useEffect, useRef } from "react";
+import CommandLine from "../_components/cli";
 
 /**
- *
  * @returns react component
  */
 function TerminalPage() {
@@ -14,7 +13,10 @@ function TerminalPage() {
    */
   const fullScreen = () => {
     const _curElem = _ref.current;
-    if (_curElem && _curElem.requestFullscreen) _curElem.requestFullscreen();
+    if (_curElem)
+      if (_curElem.requestFullscreen) {
+        _curElem.requestFullscreen();
+      }
   };
 
   /**
@@ -33,20 +35,28 @@ function TerminalPage() {
   };
 
   useEffect(() => {
-    try {
-      (async () => {
+    (async () => {
+      try {
         if (!document.fullscreenElement)
           await document.body.requestFullscreen();
         else document.exitFullscreen();
-      })();
-    } catch (err: unknown) {
-      console.error(err);
-    }
+      } catch (err: unknown) {
+        console.log(err);
+      }
+    })();
+
+    return () => {
+      if (document.fullscreenElement) document.exitFullscreen();
+    };
   }, []);
 
   return (
-    <div className="h-screen w-screen" ref={_ref} onClick={handleFullScreen}>
-      This is terminal section
+    <div
+      className="flex h-screen flex-col items-center justify-center gap-2 bg-[url('/terminal_background.png')] bg-cover bg-center bg-no-repeat"
+      ref={_ref}
+      onClick={handleFullScreen}
+    >
+      <CommandLine />
     </div>
   );
 }
