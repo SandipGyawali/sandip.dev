@@ -14,7 +14,7 @@ function CommandLineBody() {
   }, []);
 
   return (
-    <ScrollArea className="border-1 h-[60vh] w-full bg-black">
+    <ScrollArea className="border-1 rounded-b-lg h-[60vh] w-full bg-black/60">
       <div>
         <div className="px-4"></div>
         <CommandLineInput value="" disable={false} />
