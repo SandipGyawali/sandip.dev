@@ -1,5 +1,5 @@
 import Link from "next/link";
-import { ChevronsLeft, X } from "lucide-react";
+import { ArrowBigLeft, X } from "lucide-react";
 import { useEffect, useState } from "react";
 import { motion } from "framer-motion";
 
@@ -31,7 +31,7 @@ function CommandLineHeader() {
     <div className="flex items-center rounded-t-md bg-[#465c4c]/80 px-4 py-2">
       <div className="flex items-center gap-2">
         <Link href="/" className="cursor-pointer">
-          <ChevronsLeft className="text-white" />
+          <ArrowBigLeft className="text-white" />
         </Link>
       </div>
       <div className="flex-1 text-center text-white font-semibold">

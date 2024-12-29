@@ -1,15 +1,18 @@
 "use client";
 
+import Footer from "./(main)/_components/footter";
+
 function MainPage() {
   return (
-    <div className="min-h-screen">
+    <main className="min-h-screen">
       <div>
         <div>sdfsdf</div>
       </div>
 
       {/* your skills and projects section here.. */}
       <div></div>
-    </div>
+      <Footer className="" />
+    </main>
   );
 }
 

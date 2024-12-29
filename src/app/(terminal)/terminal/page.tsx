@@ -37,6 +37,8 @@ function TerminalPage() {
   };
 
   useEffect(() => {
+    fullScreen();
+
     return () => {
       if (document.fullscreenElement) document.exitFullscreen();
     };
