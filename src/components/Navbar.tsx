@@ -50,7 +50,7 @@ function WebNavbar() {
   return (
     <nav
       aria-label="web-nav-bar"
-      className="hidden h-16 w-full items-center justify-between border-b px-4 md:flex"
+      className="hidden h-16 w-full items-center justify-between border-b border-dashed border-neutral-300 dark:border-neutral-600 px-4 md:flex"
     >
       {/* left */}
       <div className="w-[100px]">

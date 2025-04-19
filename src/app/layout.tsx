@@ -7,6 +7,8 @@ import { metaData } from "@/data/metadata";
 import { cn } from "@/lib/utils";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
+import FollowCursor from "@/components/FollowCursor";
+import { useTheme } from "next-themes";
 
 const geistSans = localFont({
   src: "./fonts/GeistVF.woff",
@@ -47,14 +49,16 @@ export default function RootLayout({
         >
           <main
             className={cn(
-              "relative flex-1 flex-col overflow-x-hidden border-x"
+              "relative flex-1 flex-col overflow-x-hidden border-x border-dashed border-neutral-300 dark:border-neutral-600"
             )}
           >
             <Navbar />
-
             {children}
             <Toaster richColors closeButton position="bottom-right" />
             <Footer />
+
+            {/* cursor */}
+            <FollowCursor />
           </main>
         </ThemeProvider>
       </body>

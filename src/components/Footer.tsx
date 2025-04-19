@@ -49,8 +49,11 @@ function Footer(): React.JSX.Element {
 
   return (
     <>
-      <section id="footer" className="relative max-w-7xl border">
-        <div className="max-w-6xl divide-y px-4 lg:mx-auto lg:flex lg:divide-x lg:px-4 xl:px-0">
+      <section
+        id="footer"
+        className="relative max-w-7xl border-t border-dashed dark:border-neutral-600"
+      >
+        <div className="max-w-6xl divide-y lg:divide-y-0 divide-dashed px-4 lg:mx-auto lg:flex lg:divide-x lg:px-4 xl:px-0">
           <div className="flex w-full py-6 text-sm">
             {/* left */}
             <div>
