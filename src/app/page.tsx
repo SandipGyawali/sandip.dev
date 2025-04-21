@@ -1,22 +1,22 @@
 "use client";
 
+import About from "@/components/About";
+import BlogSection from "@/components/Blog";
 import { ContributionGraph } from "@/components/ContributionGraph";
+import Education from "@/components/Education";
+import Experience from "@/components/Experience";
 import { NewsLetter } from "@/components/NewsLetter";
 import { BentoGrid, BentoGridItem } from "@/components/ui/bento-grid";
 
 function MainPage() {
   return (
     <div className="min-h-screen">
-      <div>
-        <div>
-          <ContributionGraph />
-        </div>
+      <About />
 
-        <div></div>
-      </div>
+      <ContributionGraph />
 
       {/* your skills and projects section here.. */}
-      <BentoGrid className="max-w-6xl mx-auto mt-8 px-4 lg:px-4 xl:px-0">
+      {/* <BentoGrid className="max-w-6xl mx-auto mt-8 px-4 lg:px-4 xl:px-0">
         {items.map((item, i) => (
           <BentoGridItem
             key={i}
@@ -26,9 +26,14 @@ function MainPage() {
             className={i === 3 || i === 6 ? "md:col-span-2" : ""}
           />
         ))}
-      </BentoGrid>
+      </BentoGrid> */}
 
-      <NewsLetter />
+      {/* <NewsLetter /> */}
+      <BlogSection />
+
+      <Experience />
+
+      <Education />
     </div>
   );
 }

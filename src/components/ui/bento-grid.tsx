@@ -35,7 +35,7 @@ export const BentoGridItem = ({
   return (
     <div
       className={cn(
-        "group/bento shadow-input row-span-1 flex flex-col justify-between space-y-4 rounded-xl border border-neutral-200 bg-white p-4 transition duration-200 hover:shadow-xl dark:border-white/[0.2] dark:bg-black dark:shadow-none",
+        "relative group/bento overflow-hidden shadow-input row-span-1 flex flex-col justify-between space-y-4 rounded-xl border border-neutral-200 bg-white p-4 transition duration-200 hover:shadow-xl dark:border-white/[0.2] dark:bg-black dark:shadow-none",
         className
       )}
     >
@@ -49,6 +49,9 @@ export const BentoGridItem = ({
           {description}
         </div>
       </div>
+
+      {/* Overlay */}
+      <div className="absolute inset-0 h-full w-full bg-gradient-to-tl from-blue-500/5 to-transparent opacity-0 group-hover/bento:opacity-100 transition-opacity duration-300 rounded-xl z-0" />
     </div>
   );
 };

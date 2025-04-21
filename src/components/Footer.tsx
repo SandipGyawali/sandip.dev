@@ -1,13 +1,17 @@
 "use client";
+import { inter } from "@/app/fonts/fonts";
 import { chooseThemeImage } from "@/utils/theme.image";
 import { useTheme } from "next-themes";
 import Image from "next/image";
 import Link from "next/link";
+import { FaGithub, FaLinkedin, FaTwitter } from "react-icons/fa";
+import { MdEmail } from "react-icons/md";
 
 interface FooterLinkInterface {
   href: string;
   label: string;
   isExternal?: string;
+  icon?: React.ReactElement;
 }
 
 interface FooterSectionInterface {
@@ -23,6 +27,31 @@ const footerSections: FooterSectionInterface[] = [
       { href: "/about", label: "About" },
       { href: "/projects", label: "Projects" },
       { href: "/blog", label: "Blog" },
+    ],
+  },
+  {
+    title: "Contacts",
+    links: [
+      {
+        href: "/",
+        label: "Email",
+        icon: <MdEmail className="size-4" />,
+      },
+      {
+        href: "/",
+        label: "Twitter",
+        icon: <FaTwitter className="size-4" />,
+      },
+      {
+        href: "/",
+        label: "Github",
+        icon: <FaGithub className="size-4" />,
+      },
+      {
+        href: "/",
+        label: "Linkedin",
+        icon: <FaLinkedin className="size-4" />,
+      },
     ],
   },
   {
@@ -51,9 +80,9 @@ function Footer(): React.JSX.Element {
     <>
       <section
         id="footer"
-        className="relative max-w-7xl border-t border-dashed dark:border-neutral-600"
+        className={`relative max-w-7xl border-t border-dashed  border-neutral-300 dark:border-neutral-600 ${inter.className}`}
       >
-        <div className="max-w-6xl divide-y lg:divide-y-0 divide-dashed px-4 lg:mx-auto lg:flex lg:divide-x lg:px-4 xl:px-0">
+        <div className="max-w-6xl divide-y lg:divide-y-0 divide-dashed px-4 lg:mx-auto lg:flex lg:px-4 xl:px-0">
           <div className="flex w-full py-6 text-sm">
             {/* left */}
             <div>
@@ -69,13 +98,21 @@ function Footer(): React.JSX.Element {
                     decoding="async"
                   />
                 </Link>
-                <p className="w-60 leading-5 text-neutral-500">
-                  I&apos;m Sandip - a full stack software developer, blogger.
-                  Thank you for visiting my site.
-                </p>
+                <div className="flex flex-col gap-2">
+                  <p className="leading-none">
+                    Hi, I&apos;m Sandip — Full-Stack Software Developer.
+                  </p>
+                  <p className="text-muted-foreground max-w-[80%]">
+                    Welcome to my digital space! I craft robust, scalable web
+                    and mobile applications, and I love sharing what I learn
+                    along the way through writing. Whether you&apos;re here to
+                    explore my projects, read my blog, or just say hello —
+                    I&apos;m glad you stopped by.
+                  </p>
+                </div>
               </div>
 
-              <p className="mt-6 text-neutral-500 ">
+              <p className="mt-6 text-muted-foreground font-medium">
                 © {new Date().getFullYear()} Sandip Gyawali
               </p>
             </div>
@@ -86,15 +123,28 @@ function Footer(): React.JSX.Element {
             <div className="ld:space-x-0 flex w-full justify-between md:justify-start md:space-x-36 lg:justify-between">
               {footerSections.map((section) => (
                 <div key={section.title}>
-                  <span className="mb-4 inline-block text-base font-medium text-text-primary">
+                  <span className="mb-4 inline-block text-base font-semibold">
                     {section.title}
                   </span>
-                  <ul className="space-y-2 text-sm text-gray-500">
-                    {section.links.map((link) => (
-                      <li className="hover:text-text-primary" key={link.href}>
-                        {renderFooterLink(link)}
-                      </li>
-                    ))}
+                  <ul className="space-y-2 text-sm text-muted-foreground">
+                    {section.links.map((link) => {
+                      return link?.icon ? (
+                        <li
+                          className="hover:text-primary hover:underline flex gap-2 items-center"
+                          key={link.href}
+                        >
+                          {link?.icon ?? null}
+                          {renderFooterLink(link)}
+                        </li>
+                      ) : (
+                        <li
+                          className="hover:text-primary hover:underline"
+                          key={link.href}
+                        >
+                          {renderFooterLink(link)}
+                        </li>
+                      );
+                    })}
                   </ul>
                 </div>
               ))}

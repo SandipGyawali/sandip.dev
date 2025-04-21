@@ -6,6 +6,7 @@ import { usePathname } from "next/navigation";
 import { ModeToggle } from "./ui/Theme-Toggle";
 import { useTheme } from "next-themes";
 import { chooseThemeImage } from "@/utils/theme.image";
+import { inter } from "@/app/fonts/fonts";
 
 type NavigationLink = {
   name: string;
@@ -16,7 +17,8 @@ const navigationLinks: readonly NavigationLink[] = [
   { name: "Home", link: "/" },
   { name: "About", link: "/about" },
   { name: "Blog", link: "/blog" },
-  { name: "Projects", link: "/projects" },
+  { name: "Contact", link: "/#contact" },
+  { name: "Experience", link: "/experience" },
 ];
 
 function Navbar(): React.ReactElement {
@@ -50,7 +52,7 @@ function WebNavbar() {
   return (
     <nav
       aria-label="web-nav-bar"
-      className="hidden h-16 w-full items-center justify-between border-b border-dashed border-neutral-300 dark:border-neutral-600 px-4 md:flex"
+      className={`hidden h-16 w-full items-center justify-between border-b border-dashed border-neutral-300 dark:border-neutral-600 px-4 md:flex ${inter.className}`}
     >
       {/* left */}
       <div className="w-[100px]">
@@ -76,7 +78,7 @@ function WebNavbar() {
               prefetch={true}
               className={cn(
                 activeClass(item.link),
-                "font-medium hover:text-primary"
+                "font-medium hover:text-primary hover:underline"
               )}
             >
               {item.name}
