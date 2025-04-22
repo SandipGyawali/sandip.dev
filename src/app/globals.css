@@ -62,6 +62,12 @@ body {
   }
 }
 
+@keyframes rotate {
+  to {
+    transform: rotate(1turn);
+  }
+}
+
 @layer base {
   * {
     @apply border-border;

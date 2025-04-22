@@ -7,6 +7,11 @@ import { ModeToggle } from "./ui/Theme-Toggle";
 import { useTheme } from "next-themes";
 import { chooseThemeImage } from "@/utils/theme.image";
 import { inter } from "@/app/fonts/fonts";
+import { useEffect, useState } from "react";
+import { Dialog, DialogContent, DialogTrigger } from "@/components/ui/dialog";
+import { Button } from "./ui/button";
+import { AlignLeft } from "lucide-react";
+import { BorderBeam } from "./magicui/border-beam";
 
 type NavigationLink = {
   name: string;
@@ -31,12 +36,57 @@ function Navbar(): React.ReactElement {
 }
 
 function MobileNavbar() {
+  const { theme } = useTheme();
+  const path = usePathname();
+  const [isOpen, setIsOpen] = useState<boolean>(false);
+
+  useEffect(() => {
+    setIsOpen(false);
+  }, [path]);
+
   return (
     <nav
       aria-label="mobile-nav-bar"
-      className="flex h-16 items-center md:hidden"
+      className="flex h-16 items-center justify-between gap-2.5 border-b border-dashed px-3 md:hidden"
     >
-      Mobile Nav
+      <div className="w-[100px]">
+        <Link href="/" aria-label="home">
+          <Image
+            src={chooseThemeImage(theme)}
+            width={200}
+            height={200}
+            className="w-7 h-7"
+            alt="logo"
+            loading="lazy"
+            decoding="async"
+          />
+        </Link>
+      </div>
+
+      <Dialog>
+        <DialogTrigger asChild className="">
+          <Button variant="ghost" className="">
+            <AlignLeft />
+          </Button>
+        </DialogTrigger>
+
+        <DialogContent className="z-50 max-w-[100%] h-full overflow-y-auto">
+          <div className="flex flex-col gap-3">
+            {navigationLinks.map(({ name, link }) => (
+              <Link
+                href={link}
+                key={`${name}-${link}`}
+                className={`rounded-lg px-3 py-2 text-xl/9 font-medium ${
+                  path === link ? "text-text-primary" : "text-text-secondary"
+                } data-active:bg-gray-950/5`}
+                aria-current={path === link ? "page" : undefined}
+              >
+                {name}
+              </Link>
+            ))}
+          </div>
+        </DialogContent>
+      </Dialog>
     </nav>
   );
 }

@@ -1,17 +1,18 @@
 "use client";
-
 import About from "@/components/About";
 import BlogSection from "@/components/Blog";
 import { ContributionGraph } from "@/components/ContributionGraph";
 import Education from "@/components/Education";
 import Experience from "@/components/Experience";
-import { NewsLetter } from "@/components/NewsLetter";
-import { BentoGrid, BentoGridItem } from "@/components/ui/bento-grid";
+import Hero from "@/components/Hero";
+import ToolBox from "@/components/Toolbox";
 
 function MainPage() {
   return (
     <div className="min-h-screen">
-      <About />
+      <Hero />
+
+      {/* <About /> */}
 
       <ContributionGraph />
 
@@ -30,9 +31,8 @@ function MainPage() {
 
       {/* <NewsLetter /> */}
       <BlogSection />
-
       <Experience />
-
+      <ToolBox />
       <Education />
     </div>
   );

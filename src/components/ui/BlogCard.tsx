@@ -1,5 +1,7 @@
 import Link from "next/link";
 import clsx from "clsx";
+import Image from "next/image";
+import { BorderBeam } from "../magicui/border-beam";
 
 type BlogCardProps = {
   slug: string;
@@ -19,7 +21,7 @@ export function BlogCard({
   return (
     <li
       className={clsx(
-        "z-50 flex h-full flex-col rounded-3xl border border-border-primary bg-bg-primary p-2",
+        "relative z-50 flex h-full flex-col rounded-3xl border border-border-primary bg-bg-primary p-2",
         className
       )}
     >
@@ -28,8 +30,12 @@ export function BlogCard({
         href={`/blog/${slug}`}
         prefetch={true}
       >
-        <img
+        <Image
           src={"/blog.png"}
+          width={1000}
+          height={1000}
+          decoding="async"
+          loading="lazy"
           alt=""
           className="h-[280px] border rounded-2xl object-cover md:h-[225px]"
         />

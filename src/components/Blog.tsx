@@ -22,7 +22,6 @@ function BlogSection() {
               <h2 className={`text-3xl font-bold tracking-tighter sm:text-5xl`}>
                 Dev Notes (Blogs)
               </h2>
-              1
               <p className={`text-muted-foreground text-sm/relaxed`}>
                 Notes to self—and anyone else building cool things—on tech,
                 tools, and trials.
@@ -35,6 +34,7 @@ function BlogSection() {
           <div className="grid grid-cols-1 gap-2 md:grid-cols-2 lg:grid-cols-3">
             {[1, 2, 3, 4].map((val, index) => (
               <BlogCard
+                key={index}
                 imageName=""
                 slug="sdsf"
                 summary={`

@@ -23,20 +23,21 @@ function About() {
               </h2>
 
               <p className={`text-muted-foreground text-sm/relaxed`}>
-                👋 Hi, I'm a full-stack dev who writes code on both sides of the
-                stack so they don’t fight. Frontend? Love it. Backend? Yup.
-                Debugging at 2am? Not ideal, but I’ll survive. I mostly build
-                cool stuff with JavaScript, TypeScript, React, Node, and
-                whatever else I can get my hands on. I like clean code, fast
-                apps, and the feeling of finally fixing a bug after 3 hours of
-                staring at it. When I’m not coding, I’m probably thinking about
-                places to visit or spending time with my family.
+                👋 Hi, I&apos;m a full-stack dev who writes code on both sides
+                of the stack so they don&apos;t fight. Frontend? Love it.
+                Backend? Yup. Debugging at 2am? Not ideal, but I&apos;ll
+                survive. I mostly build cool stuff with JavaScript, TypeScript,
+                React, Node, and whatever else I can get my hands on. I like
+                clean code, fast apps, and the feeling of finally fixing a bug
+                after 3 hours of staring at it. When I&apos;m not coding,
+                I&apos;m probably thinking about places to visit or spending
+                time with my family.
               </p>
             </div>
           </div>
         </BlurFade>
 
-        <BlurFade delay={0.04 * 13}>
+        {/* <BlurFade delay={0.04 * 13}>
           <BentoGrid className="max-w-6xl mx-auto mt-8">
             {items.map((item, i) => (
               <BentoGridItem
@@ -47,7 +48,7 @@ function About() {
               />
             ))}
           </BentoGrid>
-        </BlurFade>
+        </BlurFade> */}
       </div>
     </section>
   );

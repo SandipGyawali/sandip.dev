@@ -1,8 +1,8 @@
 "use client";
 import { inter } from "@/app/fonts/fonts";
-import { ExperienceCard } from "./ui/Experience-Card";
 import BlurFade from "./ui/magicui/blur-fade";
 import { Pickaxe } from "lucide-react";
+import { ToolboxCard } from "./ui/toolbox-card";
 
 function ToolBox() {
   return (
@@ -19,26 +19,94 @@ function ToolBox() {
                 ToolBox
               </div>
               <h2 className={`text-3xl font-bold tracking-tighter sm:text-5xl`}>
-                My Tech Journey
+                Tech Stack Tales
               </h2>
 
               <p className={`text-muted-foreground text-sm/relaxed`}>
-                Over the past few years, I've had the opportunity to work in
-                dynamic environments where I contributed to building and scaling
-                real-world applications. From collaborating with
-                cross-functional teams to writing clean, maintainable code, I’ve
-                gained hands-on experience in full-stack development, agile
-                workflows, and delivering impactful features under tight
-                deadlines. Each role has shaped my ability to think critically,
-                communicate effectively, and ship meaningful products.
+                A curated collection of frameworks I&apos;ve wielded in the
+                wild—each one a tool that&apos;s helped me craft, scale, and
+                ship real-world magic.
               </p>
             </div>
           </div>
         </BlurFade>
 
         <BlurFade delay={0.04 * 13}>
-          {/* box */}
-          ssdfsdf
+          <div className="flex flex-wrap items-center gap-3">
+            {/* box */}
+            <ToolboxCard
+              name="Typescript"
+              url={"https://skillicons.dev/icons?i=typescript"}
+            />
+            <ToolboxCard
+              name="Javascript"
+              url={"https://skillicons.dev/icons?i=javascript"}
+            />
+            <ToolboxCard
+              name="React"
+              url={"https://skillicons.dev/icons?i=react"}
+            />
+            <ToolboxCard
+              name="NextJS"
+              url={"https://skillicons.dev/icons?i=nextjs"}
+            />
+            <ToolboxCard
+              name="Github"
+              url={"https://skillicons.dev/icons?i=github"}
+            />
+            <ToolboxCard
+              name="Docker"
+              url={"https://skillicons.dev/icons?i=docker"}
+            />
+            <ToolboxCard
+              name="VsCode"
+              url={"https://skillicons.dev/icons?i=vscode"}
+            />
+            <ToolboxCard
+              name="Bash"
+              url={"https://skillicons.dev/icons?i=bash"}
+            />
+            <ToolboxCard
+              name="Linux"
+              url={"https://skillicons.dev/icons?i=linux"}
+            />
+            <ToolboxCard
+              name="NodeJS"
+              url={"https://skillicons.dev/icons?i=nodejs"}
+            />
+            <ToolboxCard
+              name="Tailwind"
+              url={"https://skillicons.dev/icons?i=tailwindcss"}
+            />
+            <ToolboxCard
+              name="Git"
+              url={"https://skillicons.dev/icons?i=git"}
+            />
+            <ToolboxCard
+              name="HTML"
+              url={"https://skillicons.dev/icons?i=html"}
+            />
+            <ToolboxCard
+              name="CSS"
+              url={"https://skillicons.dev/icons?i=css"}
+            />
+            <ToolboxCard
+              name="Gitlab"
+              url={"https://skillicons.dev/icons?i=gitlab"}
+            />
+            <ToolboxCard
+              name="Postgresql"
+              url={"https://skillicons.dev/icons?i=postgresql"}
+            />
+            <ToolboxCard
+              name="ExpressJS"
+              url={"https://skillicons.dev/icons?i=express"}
+            />
+            <ToolboxCard
+              name="Postman"
+              url={"https://skillicons.dev/icons?i=postman"}
+            />
+          </div>
         </BlurFade>
       </div>
     </section>
