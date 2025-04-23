@@ -12,7 +12,7 @@ function NotFound() {
   useEffect(() => {
     const timeout = setTimeout(() => {
       setIsLoaded(true);
-    }, 200); // Delay for smoother fade-in
+    }, 200);
     return () => clearTimeout(timeout);
   }, []);
 

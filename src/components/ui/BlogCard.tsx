@@ -1,7 +1,6 @@
 import Link from "next/link";
 import clsx from "clsx";
 import Image from "next/image";
-import { BorderBeam } from "../magicui/border-beam";
 
 type BlogCardProps = {
   slug: string;
@@ -18,6 +17,8 @@ export function BlogCard({
   summary,
   className,
 }: BlogCardProps) {
+  console.log(slug);
+
   return (
     <li
       className={clsx(
@@ -31,12 +32,12 @@ export function BlogCard({
         prefetch={true}
       >
         <Image
-          src={"/blog.png"}
+          src={imageName ? `/blog/${imageName}` : "/blog.jpeg"}
           width={1000}
           height={1000}
           decoding="async"
           loading="lazy"
-          alt=""
+          alt="."
           className="h-[280px] border rounded-2xl object-cover md:h-[225px]"
         />
         <div className="my-4 flex w-full flex-grow flex-col space-y-4 text-balance px-4">

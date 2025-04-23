@@ -1,23 +1,28 @@
 "use client";
-import About from "@/components/About";
+// import About from "@/components/About";
 import BlogSection from "@/components/Blog";
 import { ContributionGraph } from "@/components/ContributionGraph";
 import Education from "@/components/Education";
 import Experience from "@/components/Experience";
 import Hero from "@/components/Hero";
 import ToolBox from "@/components/Toolbox";
+import { ConfettiFireworks } from "@/components/ui/ConfettiFireworks";
+import { useEasterEgg } from "@/hooks/useEasterEgg";
 
 function MainPage() {
+  const easterEggActive = useEasterEgg("sandip");
+
   return (
-    <div className="min-h-screen">
-      <Hero />
+    <>
+      <div className="min-h-screen">
+        <Hero />
 
-      {/* <About /> */}
+        {/* <About /> */}
 
-      <ContributionGraph />
+        <ContributionGraph />
 
-      {/* your skills and projects section here.. */}
-      {/* <BentoGrid className="max-w-6xl mx-auto mt-8 px-4 lg:px-4 xl:px-0">
+        {/* your skills and projects section here.. */}
+        {/* <BentoGrid className="max-w-6xl mx-auto mt-8 px-4 lg:px-4 xl:px-0">
         {items.map((item, i) => (
           <BentoGridItem
             key={i}
@@ -29,12 +34,16 @@ function MainPage() {
         ))}
       </BentoGrid> */}
 
-      {/* <NewsLetter /> */}
-      <BlogSection />
-      <Experience />
-      <ToolBox />
-      <Education />
-    </div>
+        {/* <NewsLetter /> */}
+        <BlogSection />
+        <Experience />
+        <ToolBox />
+        <Education />
+      </div>
+
+      {/* confetti explosion */}
+      <ConfettiFireworks trigger={easterEggActive} />
+    </>
   );
 }
 

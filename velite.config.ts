@@ -11,7 +11,7 @@ const computedFields = <T extends { slug: string }>(data: T) => ({
 
 export const blogPosts = defineCollection({
   name: "Blog",
-  pattern: "./blog/*.mdx", // extension that matches the .mdx type
+  pattern: "./blogs/*.mdx", // extension that matches the .mdx type
   schema: s
     .object({
       title: s.string(),
@@ -23,7 +23,7 @@ export const blogPosts = defineCollection({
         return meta.basename?.replace(/\.mdx$/, "") || "";
       }),
       code: s.mdx(),
-      canonicalURL: s.string().url(),
+      canonicalURL: s.string().url().optional(),
       draft: s.boolean().default(false),
     })
     .transform(computedFields),

@@ -91,8 +91,8 @@ function Hero() {
         {/* image container */}
         <div className=" image-container border-2 p-[10px] rounded-full border-dashed border-neutral-400 dark:border-neutral-500 overflow-hidden w-fit group">
           <Image
-            src="/myself.jpeg"
-            className="rounded-full w-80 h-80 object-cover filter group-hover:grayscale transition-all ease-linear duration-150"
+            src="/me.jpg"
+            className="rounded-full w-80 h-80 object-cover filter grayscale group-hover:grayscale-0 transition-all ease-linear duration-150"
             width={1000}
             height={1000}
             alt="hero-image"
