@@ -4,10 +4,13 @@ import BlurFade from "./ui/magicui/blur-fade";
 import { IoDocumentText } from "react-icons/io5";
 import { BlogCard } from "./ui/BlogCard";
 import { cn } from "@/lib/utils";
-import { fetchAndSortBlogPosts } from "@/utils/blogs";
+import { fetchAndSortBlogPosts } from "@/lib/blogs";
+import { extractUniqueBlogCategories } from "@/lib/blogs";
 
 function BlogSection() {
   const blogs = fetchAndSortBlogPosts().slice(0, 4);
+
+  console.log(extractUniqueBlogCategories(blogs));
 
   return (
     <section

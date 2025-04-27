@@ -4,20 +4,17 @@ import {
   TooltipProvider,
   TooltipTrigger,
 } from "@/components/ui/tooltip";
-import Link from "next/link";
 
 function ToolboxCard({ url, name }: { url: string; name: string }) {
   return (
     <TooltipProvider delayDuration={100}>
       <Tooltip>
         <TooltipTrigger>
-          <Link href="#" target="_blank">
-            <div className="group active:scale-95 p-2.5 border rounded-xl hover:-translate-y-1.5 transition-all ease-linear duration-100 inline-block text-centers">
-              <div className="transition-all duration-200 group-hover:border-red-500">
-                <img src={url} alt="." className="h-10 w-10" />
-              </div>
+          <div className="group active:scale-95 p-2.5 border rounded-xl hover:-translate-y-1.5 transition-all ease-linear duration-100 inline-block text-centers">
+            <div className="transition-all duration-200 group-hover:border-red-500">
+              <img src={url} alt="." className="h-10 w-10" />
             </div>
-          </Link>
+          </div>
         </TooltipTrigger>
         <TooltipContent className="font-semibold">{name}</TooltipContent>
       </Tooltip>

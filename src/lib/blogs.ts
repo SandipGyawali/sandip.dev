@@ -16,3 +16,13 @@ export function fetchAndSortBlogPosts(): Blog[] {
     notFound();
   }
 }
+
+export function extractUniqueBlogCategories(posts: Blog[]): Set<string> {
+  const categories = new Set<string>();
+
+  posts.forEach((post) => {
+    post.categories.forEach((category) => categories.add(category));
+  });
+
+  return categories;
+}
