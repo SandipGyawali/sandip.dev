@@ -34,7 +34,7 @@ async function Page({ params }: PageProps) {
         {/* cross absolutes */}
         <div
           className={cn(
-            `drama-shadow shadow flex h-[350px] w-full flex-col justify-end rounded-3xl bg-cover bg-center bg-no-repeat p-8 md:mb-16 md:h-[600px] md:px-16 border`
+            `drama-shadow shadow flex h-[350px] w-full flex-col justify-end rounded-3xl bg-cover bg-center bg-no-repeat p-8 mb-10 md:mb-16 md:h-[600px] md:px-16 border`
           )}
           style={{
             backgroundImage: `url('/blog/${post?.imgName || "blog.jpeg"}')`,
@@ -71,7 +71,7 @@ async function Page({ params }: PageProps) {
         </div>
 
         {/* markdown content code */}
-        <div className="">
+        <div className="md:mx-16 z-10">
           <MDXContent code={post?.code} />
         </div>
       </div>

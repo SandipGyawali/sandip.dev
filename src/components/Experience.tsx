@@ -23,9 +23,9 @@ function Experience() {
               </h2>
 
               <p className={`text-muted-foreground text-sm/relaxed`}>
-                Over the past few years, I've had the opportunity to work in
-                dynamic environments where I contributed to building and scaling
-                real-world applications. From collaborating with
+                Over the past few years, I&apos;ve had the opportunity to work
+                in dynamic environments where I contributed to building and
+                scaling real-world applications. From collaborating with
                 cross-functional teams to writing clean, maintainable code, I’ve
                 gained hands-on experience in full-stack development, agile
                 workflows, and delivering impactful features under tight
@@ -43,10 +43,8 @@ function Experience() {
                 title: "Amadico Nepal",
                 dates: "November 23rd - 25th, 2018",
                 location: "Kathmandu, Nepal",
-                description:
-                  "Developed a web application which delivered bedtime stories to children using augmented reality.",
-                image:
-                  "https://scontent.fktm7-1.fna.fbcdn.net/v/t39.30808-6/299650997_483533560430492_8781393622695152456_n.png?_nc_cat=108&ccb=1-7&_nc_sid=6ee11a&_nc_eui2=AeG6XS7upvNhkGNsKAnLzcR_ibcSkscQGHOJtxKSxxAYc9RgHuD1wjg3sU6QeaB09VdVZ302JfVtxbB9pcMWyS1l&_nc_ohc=seWrwmo9fvgQ7kNvwHVIXGQ&_nc_oc=Adkuc3aDGI9XvQnxCVxIyxCMeCm5Vcndmjb1gCTBRfGXedm6ZSh3waCK9oaDRqlwotY&_nc_zt=23&_nc_ht=scontent.fktm7-1.fna&_nc_gid=wh1geDI-PNhfQ-0W6BV5jQ&oh=00_AfGJ4-ZQxIaYCnWZOsQoCFcliTG4IYeHyyUD9TgQVCkTjg&oe=680BFCEB",
+                description: "",
+                image: "/amadico.png",
                 mlh: "https://s3.amazonaws.com/logged-assets/trust-badge/2019/mlh-trust-badge-2019-white.svg",
                 links: [],
               },
@@ -54,20 +52,17 @@ function Experience() {
                 title: "Yojanasolutions",
                 dates: "November 23rd - 25th, 2018",
                 location: "Kathmandu, Nepal",
-                description:
-                  "Developed a web application which delivered bedtime stories to children using augmented reality.",
-                image: "https://yojanasolutions.com/logo.svg",
+                description: "",
+                image: "/yojanasolutions.svg",
                 mlh: "https://s3.amazonaws.com/logged-assets/trust-badge/2019/mlh-trust-badge-2019-white.svg",
                 links: [],
               },
               {
-                title: "P360",
+                title: "Suga360",
                 dates: "November 23rd - 25th, 2018",
                 location: "Kathmandu, Nepal",
-                description:
-                  "Developed a web application which delivered bedtime stories to children using augmented reality.",
-                image:
-                  "https://png.pngtree.com/png-vector/20220622/ourmid/pngtree-initial-s-logo-letter-s-icon-design-template-elements-vector-symbol-png-image_5185714.png",
+                description: "",
+                image: "/suga360.webp",
                 mlh: "https://s3.amazonaws.com/logged-assets/trust-badge/2019/mlh-trust-badge-2019-white.svg",
                 links: [],
               },

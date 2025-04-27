@@ -1,6 +1,7 @@
 "use client";
 import Link from "next/link";
 import * as runtime from "react/jsx-runtime";
+import React from "react";
 
 interface Props {
   code: string;
@@ -8,18 +9,20 @@ interface Props {
   [key: string]: any;
 }
 
-function TableParser({ data }) {
-  let headers = data.headers.map((header, index) => (
-    <th key={index}>{header}</th>
-  ));
+function TableParser({ data }): React.ReactElement {
+  const headers: React.ReactElement[] = data.headers.map(
+    (header: string, index: number) => <th key={index}>{header}</th>
+  );
 
-  let rows = data.rows.map((row, index) => (
-    <td key={index}>
-      {row.map((cell, cellIndex) => (
-        <td key={cellIndex}>{cell}</td>
-      ))}
-    </td>
-  ));
+  const rows: React.ReactElement[] = data.rows.map(
+    (row: string[], index: number) => (
+      <td key={index}>
+        {row.map((cell, cellIndex: number) => (
+          <td key={cellIndex}>{cell}</td>
+        ))}
+      </td>
+    )
+  );
 
   return (
     <table>
@@ -31,7 +34,7 @@ function TableParser({ data }) {
   );
 }
 
-function slugify(str: string): string {
+function slugify(str): string {
   return str
     .toString()
     .toLowerCase()
@@ -42,19 +45,20 @@ function slugify(str: string): string {
     .replace(/\-\-+/g, "-"); // Replace multiple - with single -
 }
 
-function parseHeading(level) {
-  return ({ children }) => {
+function parseHeading(level: number) {
+  // eslint-disable-next-line react/display-name
+  return ({ children }: { children: React.ReactNode }) => {
     const slug = slugify(children);
     let textSize = "text-4xl";
     if (level === 2) textSize = "text-2xl md:text-3xl";
     if (level === 3) textSize = "text-xl md:text-2xl";
     if (level === 4) textSize = "text-lg md:text-xl";
 
-    return (
-      React.createElement(`h${level}`),
+    return React.createElement(
+      `h${level}`,
       {
         id: slug,
-        className: `${textSize} leading-8 mb-6 ${
+        className: `${textSize} text-text-primary font-medium leading-8 mb-6 ${
           level === 2 ? "mt-8" : "mt-3"
         } text-balance`,
       },
@@ -62,7 +66,7 @@ function parseHeading(level) {
         React.createElement("a", {
           href: `#${slug}`,
           key: `link-${slug}`,
-          className: "anchor",
+          className: "anchor ",
         }),
       ],
       children
@@ -70,7 +74,7 @@ function parseHeading(level) {
   };
 }
 
-function paragraph({ children }) {
+function paragraph({ children }: { children: React.ReactNode }) {
   // check if it contains any block-level elements
   const blockElementExists = React.Children.toArray(children).some(
     (child) =>
@@ -84,7 +88,9 @@ function paragraph({ children }) {
     return <>{children}</>;
   }
 
-  return <p className="mb-6 text-base leading-8">{children}</p>;
+  return (
+    <p className="mb-6 text-base text-muted-foreground leading-8">{children}</p>
+  );
 }
 
 function _Link(props) {
@@ -101,15 +107,15 @@ function _Link(props) {
   }
 }
 
-function OList({ children }) {
+function OList({ children }: { children: React.ReactNode }) {
   return <ol className="mb-8 list-decimal pl-8">{children}</ol>;
 }
 
-function UnoList({ children }) {
+function UnoList({ children }: { children: React.ReactNode }) {
   return <ul className="mb-8 list-disc pl-8">{children}</ul>;
 }
 
-function ListItem({ children }) {
+function ListItem({ children }: { children: React.ReactNode }) {
   return <li className="mb-4 text-base leading-8">{children}</li>;
 }
 
@@ -130,7 +136,6 @@ const parserComponents = {
 
 const useMDXComponent = (code: string) => {
   const fn = new Function(code);
-
   return fn({ ...runtime }).default;
 };
 

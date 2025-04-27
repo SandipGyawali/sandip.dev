@@ -29,30 +29,27 @@ function Education() {
             {[
               {
                 title: "Amrit Science Campus",
-                dates: "Jan 27 2023 - Jan 2026",
+                dates: "2023 - 2026 (Expected)",
                 location: "Kathmandu, Nepal",
                 description:
                   "Studying BSc CSIT at Amrit Science Campus, focusing on software development, computer science fundamentals",
-                image:
-                  "https://portal.tu.edu.np/medias/logo_2023_05_02_06_40_24.png",
+                image: "/tu.png",
                 links: [],
               },
               {
                 title: "Trinity International & SS College",
                 dates: "2020-2023",
                 location: "Kathmandu, Nepal",
-                description: "High School +2 (Science Stream)",
-                image:
-                  "https://www.trinity.edu.np/assets/backend/uploads/Logo/trinity%20college%20logo.jpg",
+                description: "",
+                image: "/trinity.jpg",
                 links: [],
               },
               {
                 title: "Universal College Preparator School",
-                dates: "10+ years",
+                dates: "22 Apr 2008 - 23 March 2020",
                 location: "Kathmandu, Nepal",
-                description: "Schooling",
-                image:
-                  "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQVhAEJcLeDmWFNID9RcIs2-nALWFONJJcSNg&s",
+                description: "",
+                image: "/universal.jpeg",
                 links: [],
               },
             ].map((val, id) => (

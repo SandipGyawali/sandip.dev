@@ -4,8 +4,14 @@ import { chooseThemeImage } from "@/utils/theme.image";
 import { useTheme } from "next-themes";
 import Image from "next/image";
 import Link from "next/link";
-import { FaGithub, FaLinkedin, FaTwitter } from "react-icons/fa";
+import {
+  FaGithub,
+  FaLinkedin,
+  FaStackOverflow,
+  FaTwitter,
+} from "react-icons/fa";
 import { MdEmail } from "react-icons/md";
+import { v4 as uuid } from "uuid";
 
 interface FooterLinkInterface {
   href: string;
@@ -51,6 +57,11 @@ const footerSections: FooterSectionInterface[] = [
         href: "/",
         label: "Linkedin",
         icon: <FaLinkedin className="size-4" />,
+      },
+      {
+        href: "/",
+        label: "StackOverflow",
+        icon: <FaStackOverflow className="size-4" />,
       },
     ],
   },
@@ -122,7 +133,7 @@ function Footer(): React.JSX.Element {
           <div className="flex w-full flex-col items-end py-6 text-xs lg:pl-16">
             <div className="ld:space-x-0 flex w-full justify-between md:justify-start md:space-x-36 lg:justify-between">
               {footerSections.map((section) => (
-                <div key={section.title}>
+                <div key={uuid()}>
                   <span className="mb-4 inline-block text-base font-semibold">
                     {section.title}
                   </span>
@@ -131,7 +142,7 @@ function Footer(): React.JSX.Element {
                       return link?.icon ? (
                         <li
                           className="hover:text-primary hover:underline flex gap-2 items-center"
-                          key={link.href}
+                          key={uuid()}
                         >
                           {link?.icon ?? null}
                           {renderFooterLink(link)}
@@ -139,7 +150,7 @@ function Footer(): React.JSX.Element {
                       ) : (
                         <li
                           className="hover:text-primary hover:underline"
-                          key={link.href}
+                          key={uuid()}
                         >
                           {renderFooterLink(link)}
                         </li>

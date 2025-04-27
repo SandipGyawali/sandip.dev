@@ -2,27 +2,37 @@
 import { ClipboardList } from "lucide-react";
 import Image from "next/image";
 import Link from "next/link";
-import { useState } from "react";
-import { FaGithub, FaLinkedin, FaTwitter } from "react-icons/fa";
+import {
+  FaGithub,
+  FaLinkedin,
+  FaStackOverflow,
+  FaTwitter,
+} from "react-icons/fa";
 import { MdEmail } from "react-icons/md";
 import { TypeAnimation } from "react-type-animation";
 import { Button } from "./ui/button";
 import { MdConnectWithoutContact } from "react-icons/md";
 import BlurFade from "./ui/magicui/blur-fade";
+import { useRouter } from "next/navigation";
 
 function Hero() {
-  const [isLoading, setIsLoading] = useState<boolean>(false);
+  const router = useRouter();
+
+  function handleViewTab() {
+    window.open("/files/resume.pdf", "_blank");
+  }
 
   return (
     <BlurFade delay={0.04 * 1}>
       <section
         id="hero"
-        className="max-h-screen mt-20 lg:mt-36 h-[calc(100vh-40vh)] flex flex-col md:flex-row items-start justify-between max-w-6xl px-4 xl:px-0 mx-auto mt-10"
+        className="max-h-screen mt-20 mb-10 md:mb-0 lg:mt-36 h-[calc(95vh)] sm:h-[calc(80vh)] md:h-[calc(100vh-40vh)] flex flex-col md:flex-row items-start justify-between max-w-6xl px-4 xl:px-0 mx-auto mt-10"
       >
         {/* container */}
         <div className="space-y-5">
           <h1 className="mb-5">
-            Hi <span className="font-semibold">(नमस्ते)</span>, I'm Sandip 👋
+            Hi <span className="font-semibold">(नमस्ते)</span>, I&apos;m Sandip
+            👋
           </h1>
           <TypeAnimation
             preRenderFirstString
@@ -55,33 +65,50 @@ function Hero() {
             visit or spending time with my family.
           </p>
 
-          <div className="border px-4 py-2.5 w-fit rounded-lg border-neutral-300 dark:border-neutral-600">
+          <div className="border px-5 py-2.5 w-fit rounded-lg border-neutral-300 dark:border-neutral-600">
             <div className="flex gap-7 items-center">
-              <Link href="#" className="group">
+              <Link
+                href="mailto:sandipgyawali100@gmail.com"
+                target="_blank"
+                className="group"
+              >
                 <MdEmail className="size-5 group-hover:text-purple text-muted-foreground hover:text-white transition-all ease-linear duration-100" />
               </Link>
 
-              <Link href="">
+              <Link href="https://github.com/sandipGyawali" target="_blank">
                 <FaGithub className="size-5 group-hover:text-purple text-muted-foreground hover:text-white transition-all ease-linear duration-100" />
               </Link>
 
-              <Link href="">
+              <Link href="https://x.com/SandipGyawali3" target="_blank">
                 <FaTwitter className="size-5 group-hover:text-purple text-muted-foreground hover:text-white transition-all ease-linear duration-100" />
               </Link>
 
-              <Link href="">
+              <Link
+                href="https://www.linkedin.com/in/sandip-gyawali-615681211/"
+                target="_black"
+              >
                 <FaLinkedin className="size-5 group-hover:text-purple text-muted-foreground hover:text-white transition-all ease-linear duration-100" />
+              </Link>
+
+              <Link
+                href="https://stackoverflow.com/users/21963768/sandip-gyawali"
+                target="_black"
+              >
+                <FaStackOverflow className="size-5 group-hover:text-purple text-muted-foreground hover:text-white transition-all ease-linear duration-100" />
               </Link>
             </div>
           </div>
 
           <div className="flex items-center gap-3">
-            <Button onClick={() => {}}>
+            <Button onClick={handleViewTab}>
               <ClipboardList />
               Resume
             </Button>
 
-            <Button variant="outline" onClick={() => {}}>
+            <Button
+              variant="outline"
+              onClick={() => router.push("mailto:sandipgyawali100@gmail.com")}
+            >
               <MdConnectWithoutContact />
               Contact Me
             </Button>

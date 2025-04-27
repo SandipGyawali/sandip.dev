@@ -2,7 +2,6 @@
 import { inter } from "@/app/fonts/fonts";
 import BlurFade from "./ui/magicui/blur-fade";
 import { FaUser } from "react-icons/fa";
-import { BentoGrid, BentoGridItem } from "./ui/bento-grid";
 
 function About() {
   return (
