@@ -55,7 +55,7 @@ function Page() {
 
         <Tabs
           defaultValue={blogCategories.values().toArray()?.[0]}
-          className="border-x mt-5 border-dashed max-w-full w-full"
+          className="border-x mt-5 border-dashed border-neutral-300 dark:border-neutral-600 max-w-full w-full"
         >
           {/* Mobile Dropdown */}
           <Select value={selectedCategory} onValueChange={setSelectedCategory}>
@@ -75,7 +75,7 @@ function Page() {
           </Select>
 
           {/* desktop-tab */}
-          <TabsList className="hidden md:block w-full border-b border-dashed p-0 bg-background justify-start border-b rounded-none">
+          <TabsList className="hidden md:block w-full border-b border-dashed border-neutral-300 dark:border-neutral-600 p-0 bg-background justify-start border-b rounded-none">
             {blogCategories
               .values()
               .toArray()

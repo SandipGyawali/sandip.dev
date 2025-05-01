@@ -31,7 +31,7 @@ const footerSections: FooterSectionInterface[] = [
     links: [
       { href: "/", label: "Home" },
       { href: "/about", label: "About" },
-      { href: "/projects", label: "Projects" },
+      // { href: "/projects", label: "Projects" },
       { href: "/blog", label: "Blog" },
     ],
   },
@@ -67,10 +67,7 @@ const footerSections: FooterSectionInterface[] = [
   },
   {
     title: "Extra",
-    links: [
-      { href: "/changelog", label: "Changelog" },
-      { href: "/links", label: "Links" },
-    ],
+    links: [{ href: "/experience", label: "Experience" }],
   },
 ];
 

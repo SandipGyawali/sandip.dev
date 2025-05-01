@@ -11,7 +11,6 @@ import { useEffect, useState } from "react";
 import { Dialog, DialogContent, DialogTrigger } from "@/components/ui/dialog";
 import { Button } from "./ui/button";
 import { AlignLeft } from "lucide-react";
-import { BorderBeam } from "./magicui/border-beam";
 
 type NavigationLink = {
   name: string;

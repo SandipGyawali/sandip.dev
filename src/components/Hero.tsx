@@ -53,7 +53,7 @@ function Hero() {
           />
 
           <p
-            className={`pt-2 pb-4 text-muted-foreground text-sm/relaxed max-w-lg`}
+            className={`pt-2 pb-4 text-muted-foreground font-medium text-sm/relaxed max-w-lg`}
           >
             👋 Hi, I&apos;m a full-stack dev who writes code on both sides of
             the stack so they don&apos;t fight. Frontend? Love it. Backend? Yup.
@@ -72,29 +72,29 @@ function Hero() {
                 target="_blank"
                 className="group"
               >
-                <MdEmail className="size-5 group-hover:text-purple text-muted-foreground hover:text-white transition-all ease-linear duration-100" />
+                <MdEmail className="size-5 group-hover:text-purple text-muted-foreground hover:text-muted-foreground/60 dark:hover:text-white transition-all ease-linear duration-100" />
               </Link>
 
               <Link href="https://github.com/sandipGyawali" target="_blank">
-                <FaGithub className="size-5 group-hover:text-purple text-muted-foreground hover:text-white transition-all ease-linear duration-100" />
+                <FaGithub className="size-5 group-hover:text-purple text-muted-foreground hover:text-muted-foreground/60 dark:hover:text-white transition-all ease-linear duration-100" />
               </Link>
 
               <Link href="https://x.com/SandipGyawali3" target="_blank">
-                <FaTwitter className="size-5 group-hover:text-purple text-muted-foreground hover:text-white transition-all ease-linear duration-100" />
+                <FaTwitter className="size-5 group-hover:text-purple text-muted-foreground hover:text-muted-foreground/60 dark:hover:text-white transition-all ease-linear duration-100" />
               </Link>
 
               <Link
                 href="https://www.linkedin.com/in/sandip-gyawali-615681211/"
                 target="_black"
               >
-                <FaLinkedin className="size-5 group-hover:text-purple text-muted-foreground hover:text-white transition-all ease-linear duration-100" />
+                <FaLinkedin className="size-5 group-hover:text-purple text-muted-foreground hover:text-muted-foreground/60 dark:hover:text-white transition-all ease-linear duration-100" />
               </Link>
 
               <Link
                 href="https://stackoverflow.com/users/21963768/sandip-gyawali"
                 target="_black"
               >
-                <FaStackOverflow className="size-5 group-hover:text-purple text-muted-foreground hover:text-white transition-all ease-linear duration-100" />
+                <FaStackOverflow className="size-5 group-hover:text-purple text-muted-foreground hover:text-muted-foreground/60 dark:hover:text-white transition-all ease-linear duration-100" />
               </Link>
             </div>
           </div>

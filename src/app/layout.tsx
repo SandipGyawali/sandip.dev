@@ -35,7 +35,7 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en" suppressHydrationWarning>
+    <html lang="en" suppressHydrationWarning className="">
       <link rel="icon" href="/logo.png" sizes="any" />
       <body
         className={`flex min-h-screen flex-col font-sans md:max-w-7xl lg:mx-auto lg:flex-row ${geistSans.variable} ${geistMono.variable} antialiased`}

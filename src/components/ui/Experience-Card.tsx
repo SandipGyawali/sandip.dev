@@ -2,6 +2,7 @@ import { inter } from "@/app/fonts/fonts";
 import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
 import { Badge } from "@/components/ui/badge";
 import Link from "next/link";
+import { v4 as uuid } from "uuid";
 
 interface Props {
   title: string;
@@ -14,6 +15,7 @@ interface Props {
     title: string;
     href: string;
   }[];
+  points?: string[];
 }
 
 export function ExperienceCard({
@@ -23,7 +25,10 @@ export function ExperienceCard({
   location,
   image,
   links,
+  points,
 }: Props) {
+  console.log(points);
+
   return (
     <li className={`relative ml-10 py-4 ${inter.className}`}>
       <div className="absolute -left-16 top-2 flex items-center justify-center bg-white rounded-full">
@@ -44,6 +49,13 @@ export function ExperienceCard({
           <span className="prose dark:prose-invert text-sm text-muted-foreground">
             {description}
           </span>
+        )}
+        {points && points.length > 0 && (
+          <ul className="list-disc pl-5 text-sm text-muted-foreground space-y-1 mt-2 prose dark:prose-invert">
+            {points?.map((point: string) => (
+              <li key={uuid()}>{point}</li>
+            ))}
+          </ul>
         )}
       </div>
       {links && links.length > 0 && (
