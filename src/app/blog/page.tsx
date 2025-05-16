@@ -24,7 +24,7 @@ function Page() {
   const blogCategories = extractUniqueBlogCategories(blogs);
 
   const [selectedCategory, setSelectedCategory] = useState(
-    blogCategories.values().toArray()[0] || ""
+    Array.from(blogCategories)[0] || ""
   );
 
   return (
@@ -63,43 +63,34 @@ function Page() {
               <SelectValue placeholder="Select Category" />
             </SelectTrigger>
             <SelectContent>
-              {blogCategories
-                .values()
-                .toArray()
-                .map((tab) => (
-                  <SelectItem key={tab} value={tab}>
-                    {tab}
-                  </SelectItem>
-                ))}
+              {Array.from(blogCategories).map((tab) => (
+                <SelectItem key={tab} value={tab}>
+                  {tab}
+                </SelectItem>
+              ))}
             </SelectContent>
           </Select>
 
           {/* desktop-tab */}
           <TabsList className="hidden md:block w-full border-b border-dashed border-neutral-300 dark:border-neutral-600 p-0 bg-background justify-start border-b rounded-none">
-            {blogCategories
-              .values()
-              .toArray()
-              .map((tab) => (
-                <TabsTrigger
-                  key={uuid()}
-                  value={tab}
-                  className="rounded-none bg-background h-full data-[state=active]:shadow-none border-b-2 border-transparent data-[state=active]:border-primary"
-                >
-                  <span className="text-xs uppercase text-muted-foreground font-medium">
-                    {tab}
-                  </span>
-                </TabsTrigger>
-              ))}
+            {Array.from(blogCategories).map((tab) => (
+              <TabsTrigger
+                key={uuid()}
+                value={tab}
+                className="rounded-none bg-background h-full data-[state=active]:shadow-none border-b-2 border-transparent data-[state=active]:border-primary"
+              >
+                <span className="text-xs uppercase text-muted-foreground font-medium">
+                  {tab}
+                </span>
+              </TabsTrigger>
+            ))}
           </TabsList>
 
-          {blogCategories
-            .values()
-            .toArray()
-            .map((tab) => (
-              <TabsContent key={uuid()} value={tab} className="px-3">
-                <BlogPostList posts={blogs} />
-              </TabsContent>
-            ))}
+          {Array.from(blogCategories).map((tab) => (
+            <TabsContent key={uuid()} value={tab} className="px-3">
+              <BlogPostList posts={blogs} />
+            </TabsContent>
+          ))}
         </Tabs>
       </div>
     </>
