@@ -18,9 +18,9 @@ import { useRouter } from "next/navigation";
 function Hero() {
   const router = useRouter();
 
-  function handleViewTab() {
-    window.open("/files/resume.pdf", "_blank");
-  }
+  // function handleViewTab() {
+  //   window.open("/files/resume.pdf", "_blank");
+  // }
 
   return (
     <BlurFade delay={0.04 * 1}>
@@ -100,7 +100,9 @@ function Hero() {
           </div>
 
           <div className="flex items-center gap-3">
-            <Button onClick={handleViewTab}>
+            <Button
+            // onClick={handleViewTab}
+            >
               <ClipboardList />
               Resume
             </Button>
