@@ -54,7 +54,7 @@ function Page() {
         </BlurFade>
 
         <Tabs
-          defaultValue={blogCategories.values().toArray()?.[0]}
+          defaultValue={Array.from(blogCategories)?.[0]}
           className="border-x mt-5 border-dashed border-neutral-300 dark:border-neutral-600 max-w-full w-full"
         >
           {/* Mobile Dropdown */}
