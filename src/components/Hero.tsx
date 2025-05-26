@@ -26,7 +26,7 @@ function Hero() {
     <BlurFade delay={0.04 * 1}>
       <section
         id="hero"
-        className="max-h-screen mt-20 mb-10 md:mb-0 lg:mt-36 h-[calc(95vh)] sm:h-[calc(80vh)] md:h-[calc(100vh-40vh)] flex flex-col md:flex-row items-start justify-between max-w-6xl px-4 xl:px-0 mx-auto mt-10"
+        className="max-h-screen mt-20 mb-10 md:mb-0 lg:mt-36 h-[calc(95vh)] sm:h-[calc(80vh)] md:h-[calc(100vh-40vh)] flex flex-col md:flex-row items-start justify-between px-4 xl:px-0 mx-auto mt-10"
       >
         {/* container */}
         <div className="space-y-5">
@@ -48,7 +48,7 @@ function Hero() {
               1000,
             ]}
             speed={50}
-            className="font-bold text-3xl lg:text-5xl"
+            className="font-bold text-white text-3xl lg:text-5xl"
             repeat={Infinity}
           />
 

@@ -6,7 +6,7 @@ interface FollowCursorProps {
   color?: string;
 }
 
-const FollowCursor: React.FC<FollowCursorProps> = ({ color = "#737373" }) => {
+const FollowCursor: React.FC<FollowCursorProps> = ({ color = "#f3f3f3" }) => {
   const { theme } = useTheme();
 
   useEffect(() => {
