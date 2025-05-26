@@ -1,0 +1,18 @@
+[
+  {
+    "title": "How to Dockerize a Next.js Application",
+    "publishedAt": "2025-04-23T00:00:00.000Z",
+    "summary": "A step-by-step guide to containerize your Next.js app using Docker for smoother development and production deployment.",
+    "imgName": "dockerize-nextjs-application.webp",
+    "categories": [
+      "nextjs",
+      "docker",
+      "devops",
+      "web development"
+    ],
+    "slug": "dockerize-next.js-appication",
+    "code": "const{Fragment:e,jsx:n,jsxs:t}=arguments[0];function _createMdxContent(r){const o={h1:\"h1\",h2:\"h2\",p:\"p\",strong:\"strong\",...r.components};return t(e,{children:[n(o.h1,{children:\"🐳 How to Dockerize a Next.js Application\"}),\"\\n\",t(o.p,{children:[\"Containerizing your \",n(o.strong,{children:\"Next.js\"}),\" app helps make your development workflow smoother and deployment more consistent across environments. Whether you're prepping for a production push or creating a portable dev setup, Docker's got your back. Let’s dive in.\"]}),\"\\n\",n(o.h2,{children:\"📁 Step 1: Project Structure\"})]})}return{default:function(e={}){const{wrapper:t}=e.components||{};return t?n(t,{...e,children:n(_createMdxContent,{...e})}):_createMdxContent(e)}};",
+    "draft": false,
+    "slugAsParams": ""
+  }
+]
