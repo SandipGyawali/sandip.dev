@@ -4,12 +4,15 @@ import Image from "next/image";
 import { motion } from "framer-motion";
 import { Sparkles } from "lucide-react";
 import ShinyText from "./ui/shiny.text";
+import useMousePosition from "@/hooks/useMousePosition";
 
 function About() {
+  const { setCursorVariant, cursorVariant } = useMousePosition();
+
   return (
     <section
       id="about"
-      className={`lg:max-w-7xl mt-24 mb-16  px-4 xl:px-0 mx-auto ${inter.className}`}
+      className={`w-full mt-24 mb-16  px-4 xl:px-0 mx-auto ${inter.className}`}
     >
       <div className="grid grid-cols-5 gap-12">
         <div className="col-span-3">
@@ -36,7 +39,17 @@ function About() {
               <p className="text-white">Available For Work</p>
             </div>
 
-            <h2 className="text-white text-7xl font-semibold">Meet Sandip.</h2>
+            <motion.h2
+              onMouseEnter={() => {
+                setCursorVariant("text");
+              }}
+              onMouseLeave={() => {
+                setCursorVariant("default");
+              }}
+              className="text-white text-7xl font-semibold"
+            >
+              Meet Sandip.
+            </motion.h2>
 
             <p className="text-[#9e9e9e] w-[85%] tracking-wider">
               I&apos;m Sandip, a full-stack dev who writes code on both sides of
@@ -49,7 +62,7 @@ function About() {
               places to visit or spending time with my family.
             </p>
 
-            <div className="w-full h-[1px] bg-[#27272a]" />
+            <div className="w-full h-[2px] bg-[#27272a]" />
 
             <div className="flex items-center gap-3">
               {["Frontend", "Backend", "FullStack", "Product Design"].map(

@@ -1,6 +1,7 @@
 "use client";
 import React from "react";
 import { motion } from "motion/react";
+import Link from "next/link";
 
 const transition = {
   type: "spring",
@@ -68,9 +69,14 @@ export const Menu = ({
   return (
     <nav
       onMouseLeave={() => setActive(null)} // resets the state
-      className="relative bg-transparent backdrop-blur-sm shadow-input flex justify-center space-x-8 px-8 py-3"
+      className="max-w-[80%] relative bg-transparent backdrop-blur-sm shadow-input flex justify-between items-center"
     >
-      {children}
+      <Link href="/" className="text-white w-fit font-bold font-serif text-xl">
+        Sandip®
+      </Link>
+      <div className="w-auto flex items-center justify-center space-x-8 py-3">
+        {children}
+      </div>
     </nav>
   );
 };

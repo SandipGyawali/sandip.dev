@@ -4,9 +4,6 @@ import "./globals.css";
 import { Toaster } from "sonner";
 import { ThemeProvider } from "@/providers/theme.provider";
 import { metaData } from "@/data/metadata";
-import Navbar from "@/components/Navbar";
-import Footer from "@/components/Footer";
-import FollowCursor from "@/components/FollowCursor";
 import ScrollWrapper from "@/providers/scroll.wrapper";
 
 const geistSans = localFont({
@@ -38,7 +35,7 @@ export default function RootLayout({
     <html lang="en" suppressHydrationWarning className="">
       <link rel="icon" href="/logo.png" sizes="any" />
       <body
-        className={`flex min-h-screen flex-col font-sans md:max-w-[1200px] lg:mx-auto lg:flex-row bg-black ${geistSans.variable} ${geistMono.variable} antialiased`}
+        className={`flex min-h-screen flex-col font-sans md:max-w-[80%] lg:mx-auto lg:flex-row bg-black ${geistSans.variable} ${geistMono.variable} antialiased`}
       >
         <ThemeProvider
           attribute="class"
@@ -47,14 +44,8 @@ export default function RootLayout({
           disableTransitionOnChange
         >
           <ScrollWrapper>
-            <Navbar />
-
             {children}
             <Toaster richColors closeButton position="bottom-right" />
-            <Footer />
-
-            {/* cursor */}
-            <FollowCursor />
           </ScrollWrapper>
         </ThemeProvider>
       </body>

@@ -9,7 +9,7 @@ function ScrollWrapper({ children }: { children: React.ReactNode }) {
 
   useEffect(() => {
     const lenis = new Lenis({
-      duration: 1.5,
+      duration: 3,
     });
 
     lenisRef.current = lenis;

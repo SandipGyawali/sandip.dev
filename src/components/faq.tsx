@@ -5,6 +5,7 @@ import { ChevronDown, Sparkles } from "lucide-react";
 import { cn } from "@/lib/utils";
 import ShinyText from "./ui/shiny.text";
 import { FeatureFive, FeatureOne, FeatureSeven } from "./ui/bento";
+import { useCursorVariantStore } from "@/store/CursorVariantStore";
 
 interface FAQItemProps {
   question: string;
@@ -116,6 +117,8 @@ function FAQItem({ question, answer, index }: FAQItemProps) {
 }
 
 function Faq02() {
+  const { setCursorVariant } = useCursorVariantStore();
+
   const faqs: Omit<FAQItemProps, "index">[] = [
     {
       question: "What services do you provide?",
@@ -170,11 +173,19 @@ function Faq02() {
           </span>
         </motion.div>
 
-        <div className="grid grid-cols-1 grid-rows-1 gap-3 sm:grid-cols-2 sm:grid-rows-2">
+        <motion.div
+          onMouseEnter={() => {
+            setCursorVariant("text");
+          }}
+          onMouseLeave={() => {
+            setCursorVariant("default");
+          }}
+          className="grid grid-cols-1 grid-rows-1 gap-3 sm:grid-cols-2 sm:grid-rows-2"
+        >
           <FeatureSeven />
           <FeatureFive />
           <FeatureOne />
-        </div>
+        </motion.div>
       </div>
 
       <div className="container px-4 mx-auto">

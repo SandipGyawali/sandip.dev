@@ -168,7 +168,7 @@ export function NavbarDemo() {
 function Navbar({ className }: { className?: string }) {
   const [active, setActive] = useState<string | null>(null);
   return (
-    <div className={cn("fixed w-full max-w-7xl mx-auto z-50")}>
+    <div className={cn("fixed w-full z-50")}>
       <Menu setActive={setActive}>
         <MenuItem setActive={setActive} active={active} item="Home">
           {/* <div className="text-sm grid grid-cols-2 gap-10 p-4">

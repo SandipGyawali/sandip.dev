@@ -4,8 +4,9 @@ import { ArrowUp, Mail } from "lucide-react";
 import Link from "next/link";
 import { FaGithub, FaLinkedin, FaStackOverflow } from "react-icons/fa";
 import { FaXTwitter } from "react-icons/fa6";
-import {} from "react-icons";
 import { v4 as uuid } from "uuid";
+import useMousePosition from "@/hooks/useMousePosition";
+import { motion } from "framer-motion";
 
 interface FooterLinkInterface {
   href: string;
@@ -53,6 +54,7 @@ const footerSections: FooterSectionInterface[] = [
 ];
 
 function Footer(): React.JSX.Element {
+  const { setCursorVariant, cursorVariant } = useMousePosition();
   const renderFooterLink = (link: FooterLinkInterface): JSX.Element => {
     if (link.isExternal) {
       return (
@@ -66,11 +68,8 @@ function Footer(): React.JSX.Element {
 
   return (
     <>
-      <section
-        id="footer"
-        className={`relative w-full max-w-7xl ${inter.className}`}
-      >
-        <div className="max-w-7xl  mt-[20vh] divide-y lg:divide-y-0 divide-dashed px-4 lg:mx-auto lg:px-4 xl:px-0">
+      <section id="footer" className={`relative w-full ${inter.className}`}>
+        <div className="mt-[20vh] divide-y lg:divide-y-0 divide-dashed px-4 lg:mx-auto lg:px-4 xl:px-0">
           <div className="mb-8 w-fit mx-auto text-center border border-[#27272a] rounded-full px-4 flex items-center gap-3 py-2">
             <span className="relative flex size-3 items-center justify-center">
               <span className="absolute inline-flex h-full w-full animate-ping rounded-full bg-white opacity-75"></span>
@@ -89,6 +88,7 @@ function Footer(): React.JSX.Element {
                       <>
                         <Link
                           href={link.href}
+                          target="_blank"
                           className="hover:text-white font-medium hover:underline flex gap-2 items-center"
                           key={uuid()}
                         >
@@ -113,9 +113,17 @@ function Footer(): React.JSX.Element {
             </div>
           </div>
         </div>
-        <h2 className="tracking-tight text-white text-center mt-10 text-[270px] font-bold w-full">
+        <motion.h2
+          onMouseEnter={() => {
+            setCursorVariant("text");
+          }}
+          onMouseLeave={() => {
+            setCursorVariant("default");
+          }}
+          className="tracking-tight text-white text-center mt-10 text-[340px] font-bold w-full"
+        >
           Let&apos;s Talk
-        </h2>
+        </motion.h2>
 
         <div className="mt-6 mb-10 flex items-center justify-between">
           <Link
@@ -131,12 +139,10 @@ function Footer(): React.JSX.Element {
 
           <div
             onClick={() => {
-              if (window !== undefined) {
-                window.scrollTo({
-                  top: 0,
-                  behavior: "smooth",
-                });
-              }
+              window.scrollTo({
+                top: 0,
+                behavior: "smooth",
+              });
             }}
             className="text-white text-xl tracking-wide cursor-pointer font-medium flex items-center gap-2 hover:underline transition duration-150 ease-linear"
           >
