@@ -1,17 +1,12 @@
 "use client";
 import { inter } from "@/app/fonts/fonts";
-import { chooseThemeImage } from "@/utils/theme.image";
-import { useTheme } from "next-themes";
-import Image from "next/image";
+import { ArrowUp, Mail } from "lucide-react";
 import Link from "next/link";
-import {
-  FaGithub,
-  FaLinkedin,
-  FaStackOverflow,
-  FaTwitter,
-} from "react-icons/fa";
-import { MdEmail } from "react-icons/md";
+import { FaGithub, FaLinkedin, FaStackOverflow } from "react-icons/fa";
+import { FaXTwitter } from "react-icons/fa6";
 import { v4 as uuid } from "uuid";
+import useMousePosition from "@/hooks/useMousePosition";
+import { motion } from "framer-motion";
 
 interface FooterLinkInterface {
   href: string;
@@ -27,52 +22,39 @@ interface FooterSectionInterface {
 
 const footerSections: FooterSectionInterface[] = [
   {
-    title: "General",
-    links: [
-      { href: "/", label: "Home" },
-      { href: "/about", label: "About" },
-      // { href: "/projects", label: "Projects" },
-      { href: "/blog", label: "Blog" },
-    ],
-  },
-  {
     title: "Contacts",
     links: [
       {
-        href: "/",
+        href: "mailto:sandipgyawali100@gmail.com",
         label: "Email",
-        icon: <MdEmail className="size-4" />,
+        icon: <Mail className="size-7" />,
       },
       {
-        href: "/",
+        href: "https://x.com/SandipGyawali3",
         label: "Twitter",
-        icon: <FaTwitter className="size-4" />,
+        icon: <FaXTwitter className="size-7" />,
       },
       {
-        href: "/",
+        href: "https://github.com/SandipGyawali",
         label: "Github",
-        icon: <FaGithub className="size-4" />,
+        icon: <FaGithub className="size-7" />,
       },
       {
-        href: "/",
+        href: "https://www.linkedin.com/in/sandip-gyawali-615681211/",
         label: "Linkedin",
-        icon: <FaLinkedin className="size-4" />,
+        icon: <FaLinkedin className="size-7" />,
       },
       {
-        href: "/",
+        href: "https://stackoverflow.com/users/21963768/sandip-gyawali",
         label: "StackOverflow",
-        icon: <FaStackOverflow className="size-4" />,
+        icon: <FaStackOverflow className="size-7" />,
       },
     ],
-  },
-  {
-    title: "Extra",
-    links: [{ href: "/experience", label: "Experience" }],
   },
 ];
 
 function Footer(): React.JSX.Element {
-  const { theme } = useTheme();
+  const { setCursorVariant, cursorVariant } = useMousePosition();
   const renderFooterLink = (link: FooterLinkInterface): JSX.Element => {
     if (link.isExternal) {
       return (
@@ -86,77 +68,86 @@ function Footer(): React.JSX.Element {
 
   return (
     <>
-      <section
-        id="footer"
-        className={`relative max-w-7xl border-t border-dashed  border-neutral-300 dark:border-neutral-600 ${inter.className}`}
-      >
-        <div className="max-w-6xl divide-y lg:divide-y-0 divide-dashed px-4 lg:mx-auto lg:flex lg:px-4 xl:px-0">
-          <div className="flex w-full py-6 text-sm">
-            {/* left */}
-            <div>
-              <div className="flex-grow space-y-6">
-                <Link href="/" className="inline-block">
-                  <Image
-                    src={chooseThemeImage(theme)}
-                    className="w-7 h-7"
-                    width={200}
-                    height={200}
-                    alt="logo"
-                    loading="lazy"
-                    decoding="async"
-                  />
-                </Link>
-                <div className="flex flex-col gap-2">
-                  <p className="leading-none">
-                    Hi, I&apos;m Sandip — Full-Stack Software Developer.
-                  </p>
-                  <p className="text-muted-foreground max-w-[80%]">
-                    Welcome to my digital space! I craft robust, scalable web
-                    and mobile applications, and I love sharing what I learn
-                    along the way through writing. Whether you&apos;re here to
-                    explore my projects, read my blog, or just say hello —
-                    I&apos;m glad you stopped by.
-                  </p>
-                </div>
-              </div>
-
-              <p className="mt-6 text-muted-foreground font-medium">
-                © {new Date().getFullYear()} Sandip Gyawali
-              </p>
-            </div>
+      <section id="footer" className={`relative w-full ${inter.className}`}>
+        <div className="mt-[20vh] divide-y lg:divide-y-0 divide-dashed px-4 lg:mx-auto lg:px-4 xl:px-0">
+          <div className="mb-8 w-fit mx-auto text-center border border-[#27272a] rounded-full px-4 flex items-center gap-3 py-2">
+            <span className="relative flex size-3 items-center justify-center">
+              <span className="absolute inline-flex h-full w-full animate-ping rounded-full bg-white opacity-75"></span>
+              <span className="relative inline-flex size-2 rounded-full bg-white"></span>
+            </span>
+            <p className="text-white">Available For Work</p>
           </div>
 
           {/* right */}
           <div className="flex w-full flex-col items-end py-6 text-xs lg:pl-16">
             <div className="ld:space-x-0 flex w-full justify-between md:justify-start md:space-x-36 lg:justify-between">
               {footerSections.map((section) => (
-                <div key={uuid()}>
-                  <span className="mb-4 inline-block text-base font-semibold">
-                    {section.title}
-                  </span>
-                  <ul className="space-y-2 text-sm text-muted-foreground">
-                    {section.links.map((link) => {
-                      return link?.icon ? (
-                        <li
-                          className="hover:text-primary hover:underline flex gap-2 items-center"
+                <div className="mx-auto flex items-center gap-8 space-x-5 text-[#9e9e9e]">
+                  {section.links.map((link, index) => {
+                    return link?.icon ? (
+                      <>
+                        <Link
+                          href={link.href}
+                          target="_blank"
+                          className="hover:text-white font-medium hover:underline flex gap-2 items-center"
                           key={uuid()}
                         >
                           {link?.icon ?? null}
-                          {renderFooterLink(link)}
-                        </li>
-                      ) : (
-                        <li
-                          className="hover:text-primary hover:underline"
-                          key={uuid()}
-                        >
-                          {renderFooterLink(link)}
-                        </li>
-                      );
-                    })}
-                  </ul>
+                        </Link>
+
+                        {index !== section.links.length - 1 && (
+                          <div className="h-full w-[2px] bg-[#9e9e9e]/40" />
+                        )}
+                      </>
+                    ) : (
+                      <li
+                        className="hover:text-white font-medium hover:underline"
+                        key={uuid()}
+                      >
+                        {renderFooterLink(link)}
+                      </li>
+                    );
+                  })}
                 </div>
               ))}
             </div>
+          </div>
+        </div>
+        <motion.h2
+          onMouseEnter={() => {
+            setCursorVariant("text");
+          }}
+          onMouseLeave={() => {
+            setCursorVariant("default");
+          }}
+          className="tracking-tight text-white text-center mt-10 text-[340px] font-bold w-full"
+        >
+          Let&apos;s Talk
+        </motion.h2>
+
+        <div className="mt-6 mb-10 flex items-center justify-between">
+          <Link
+            href={"mailto:sandipgyawali100@gmail.com"}
+            className="text-white font-medium hover:underline text-xl tracking-wide"
+          >
+            sandipgyawali100@gmail.com
+          </Link>
+
+          <p className="text-white text-xl font-medium tracking-wide">
+            © {new Date().getFullYear()} Sandip Gyawali
+          </p>
+
+          <div
+            onClick={() => {
+              window.scrollTo({
+                top: 0,
+                behavior: "smooth",
+              });
+            }}
+            className="text-white text-xl tracking-wide cursor-pointer font-medium flex items-center gap-2 hover:underline transition duration-150 ease-linear"
+          >
+            <ArrowUp />
+            Back to Top
           </div>
         </div>
       </section>
