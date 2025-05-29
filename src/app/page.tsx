@@ -13,7 +13,8 @@ import { useEasterEgg } from "@/hooks/useEasterEgg";
 import FollowCursor from "@/components/FollowCursor";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
-// import Contact from "@/components/contact";
+import Contact from "@/components/contact";
+import ScrollVelocity from "@/components/ui/scroll-velocity";
 
 function MainPage() {
   const easterEggActive = useEasterEgg("sandip");
@@ -24,9 +25,18 @@ function MainPage() {
       <div className="min-h-screen">
         {/* <Hero /> */}
         <About />
-        <TechStackTestimonial />
+        <ScrollVelocity
+          texts={[
+            "✧˖ UI/UX Design ✧˖ Motion Graphics ✧˖ Frontend ✧˖ Backend ✧˖ API Integration",
+            "✧˖ Animation ✧˖ Full-Stack Development ✧˖ Deployment ✧˖ Performance Tuning",
+          ]}
+          velocity={50}
+          className="bg-white text-transparent bg-clip-text"
+        />
         <Faq02 />
-        {/* <Contact /> */}
+        <TechStackTestimonial />
+        <Contact />
+
         {/* <Experience />
         <ContributionGraph />
         <BlogSection />

@@ -3,10 +3,16 @@ import { inter } from "@/app/fonts/fonts";
 import { ArrowUp, Mail } from "lucide-react";
 import Link from "next/link";
 import { FaGithub, FaLinkedin, FaStackOverflow } from "react-icons/fa";
-import { FaXTwitter } from "react-icons/fa6";
+import { FaUpwork, FaXTwitter } from "react-icons/fa6";
 import { v4 as uuid } from "uuid";
 import useMousePosition from "@/hooks/useMousePosition";
 import { motion } from "framer-motion";
+import {
+  Tooltip,
+  TooltipContent,
+  TooltipProvider,
+  TooltipTrigger,
+} from "./ui/tooltip";
 
 interface FooterLinkInterface {
   href: string;
@@ -40,6 +46,11 @@ const footerSections: FooterSectionInterface[] = [
         icon: <FaGithub className="size-7" />,
       },
       {
+        href: "https://www.upwork.com/freelancers/~01b85901ff427f5579?mp_source=share",
+        label: "Upwork",
+        icon: <FaUpwork className="size-7" />,
+      },
+      {
         href: "https://www.linkedin.com/in/sandip-gyawali-615681211/",
         label: "Linkedin",
         icon: <FaLinkedin className="size-7" />,
@@ -54,7 +65,7 @@ const footerSections: FooterSectionInterface[] = [
 ];
 
 function Footer(): React.JSX.Element {
-  const { setCursorVariant, cursorVariant } = useMousePosition();
+  const { setCursorVariant } = useMousePosition();
   const renderFooterLink = (link: FooterLinkInterface): JSX.Element => {
     if (link.isExternal) {
       return (
@@ -82,32 +93,44 @@ function Footer(): React.JSX.Element {
           <div className="flex w-full flex-col items-end py-6 text-xs lg:pl-16">
             <div className="ld:space-x-0 flex w-full justify-between md:justify-start md:space-x-36 lg:justify-between">
               {footerSections.map((section) => (
-                <div className="mx-auto flex items-center gap-8 space-x-5 text-[#9e9e9e]">
-                  {section.links.map((link, index) => {
-                    return link?.icon ? (
-                      <>
-                        <Link
-                          href={link.href}
-                          target="_blank"
-                          className="hover:text-white font-medium hover:underline flex gap-2 items-center"
+                <div
+                  key={uuid()}
+                  className="mx-auto flex items-center gap-8 space-x-5 text-[#9e9e9e]"
+                >
+                  <TooltipProvider>
+                    {section.links.map((link, index) => {
+                      return link?.icon ? (
+                        <>
+                          <Tooltip>
+                            <TooltipTrigger asChild>
+                              <Link
+                                href={link.href}
+                                target="_blank"
+                                className="hover:text-white font-medium hover:underline flex gap-2 items-center"
+                                key={uuid()}
+                              >
+                                {link?.icon ?? null}
+                              </Link>
+                            </TooltipTrigger>
+                            <TooltipContent className="text-white">
+                              <p>{link.label}</p>
+                            </TooltipContent>
+                          </Tooltip>
+
+                          {index !== section.links.length - 1 && (
+                            <div className="h-full w-[2px] bg-[#9e9e9e]/40" />
+                          )}
+                        </>
+                      ) : (
+                        <li
+                          className="hover:text-white font-medium hover:underline"
                           key={uuid()}
                         >
-                          {link?.icon ?? null}
-                        </Link>
-
-                        {index !== section.links.length - 1 && (
-                          <div className="h-full w-[2px] bg-[#9e9e9e]/40" />
-                        )}
-                      </>
-                    ) : (
-                      <li
-                        className="hover:text-white font-medium hover:underline"
-                        key={uuid()}
-                      >
-                        {renderFooterLink(link)}
-                      </li>
-                    );
-                  })}
+                          {renderFooterLink(link)}
+                        </li>
+                      );
+                    })}
+                  </TooltipProvider>
                 </div>
               ))}
             </div>
