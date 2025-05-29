@@ -1,10 +1,15 @@
 "use client";
 import { inter } from "@/app/fonts/fonts";
-import Image from "next/image";
 import { motion } from "framer-motion";
 import { Sparkles } from "lucide-react";
 import ShinyText from "./ui/shiny.text";
 import useMousePosition from "@/hooks/useMousePosition";
+import React from "react";
+import GridDistortion from "./ui/grid-distortion";
+
+function ClipPathImage() {
+  return <>{/* Hidden SVG with clip path definition */}</>;
+}
 
 function About() {
   const { setCursorVariant, cursorVariant } = useMousePosition();
@@ -79,16 +84,13 @@ function About() {
           </div>
         </div>
 
-        <div className="col-span-2">
-          <Image
-            src="/me.jpg"
-            className="rounded-3xl hover:grayscale-0 w-full h-full object-cover filter grayscale group-hover:grayscale-0 transition-all ease-linear duration-150"
-            width={1000}
-            height={1000}
-            alt="hero-image"
-            loading="lazy"
-            decoding="async"
-            quality={100}
+        <div className="col-span-2 w-full h-[600px] grayscale hover:grayscale-0 transition-all ease-linear duration-500 rounded-3xl overflow-hidden">
+          <GridDistortion
+            imageSrc="/me.jpg"
+            grid={10}
+            mouse={0.1}
+            strength={0.15}
+            relaxation={0.9}
           />
         </div>
       </div>

@@ -145,6 +145,11 @@ function Faq02() {
       answer:
         "You can get started by signing up for a free trial. Once you've signed up, you'll have access to our platform's full range of features. You can also contact our support team for assistance.",
     },
+    {
+      question: "How can I get started?",
+      answer:
+        "You can get started by signing up for a free trial. Once you've signed up, you'll have access to our platform's full range of features. You can also contact our support team for assistance.",
+    },
   ];
 
   return (

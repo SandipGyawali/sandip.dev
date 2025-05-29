@@ -1,12 +1,13 @@
 import { cn } from "@/lib/utils";
 import Ticker from "./ticker";
 import ShinyText from "./shiny.text";
+import BarChart from "./bar.chart";
 
 export function FeatureFive() {
   return (
     <BentoCard className="relative flex flex-col items-center justify-center border border-[#27272a] col-span-1">
       <svg
-        className="absolute left-5 top-2 inset-0 size-full text-white text-caption"
+        className="absolute left-14 top-5 inset-0 size-full text-white text-caption"
         viewBox="0s 0 254 104"
         fill="none"
         xmlns="http://www.w3.org/2000/svg"
@@ -27,7 +28,7 @@ export function FeatureFive() {
 
 export function FeatureSeven() {
   return (
-    <BentoCard className="flex flex-col gap-2 border border-[#27272a] cols-span-1 sm:row-span-2">
+    <BentoCard className="flex flex-col justify-center gap-2.5 border border-[#27272a] cols-span-1 sm:row-span-2">
       <div className="w-full -rotate-1 rounded-full bg-[#1c1c1c] py-2 text-center font-semibold text-white md:-rotate-3">
         Javascript
       </div>
@@ -61,7 +62,60 @@ export function FeatureOne() {
   );
 }
 
-function BentoCard({
+export function BentoBar() {
+  return (
+    <BentoCard className="bg-green-200">
+      <BarChart
+        items={[
+          {
+            progress: 30,
+            label: "Jan",
+            className: "rounded-xl bg-green-400",
+          },
+          {
+            progress: 70,
+            label: "S",
+            className: "rounded-xl bg-green-400",
+          },
+          {
+            progress: 60,
+            label: "M",
+            className: "rounded-xl bg-green-400",
+          },
+          {
+            progress: 90,
+            label: "T",
+            className: "rounded-xl bg-green-400",
+          },
+          {
+            progress: 10,
+            label: "W",
+            className: "rounded-xl bg-green-400",
+          },
+          {
+            progress: 20,
+            label: "Th",
+            className: "rounded-xl bg-green-400",
+          },
+          {
+            progress: 30,
+            label: "F",
+            className: "rounded-xl bg-green-400",
+          },
+          {
+            progress: 90,
+            label: "Sa",
+            className: "rounded-xl bg-green-400",
+          },
+        ]}
+        height={100}
+      />
+      <div className="mt-2 text-center font-bold">Weekly review</div>
+    </BentoCard>
+  );
+}
+
+export function BentoCard({
   children,
   className,
 }: {
@@ -71,7 +125,7 @@ function BentoCard({
   return (
     <div
       className={cn(
-        "relative h-full w-full overflow-hidden rounded-2xl p-4",
+        "relative h-full w-full overflow-hidden rounded-2xl py-7 px-4",
         className
       )}
     >
