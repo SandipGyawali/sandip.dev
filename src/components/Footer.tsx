@@ -143,7 +143,7 @@ function Footer(): React.JSX.Element {
           onMouseLeave={() => {
             setCursorVariant("default");
           }}
-          className="tracking-tight text-white text-center mt-10 text-[340px] font-bold w-full"
+          className="tracking-tight text-white text-center mt-10 text-[380px] font-bold w-full"
         >
           Let&apos;s Talk
         </motion.h2>

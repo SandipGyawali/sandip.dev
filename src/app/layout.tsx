@@ -35,7 +35,7 @@ export default function RootLayout({
     <html lang="en" suppressHydrationWarning className="">
       <link rel="icon" href="/logo.png" sizes="any" />
       <body
-        className={`flex min-h-screen flex-col font-sans md:max-w-[80%] lg:mx-auto lg:flex-row bg-black ${geistSans.variable} ${geistMono.variable} antialiased`}
+        className={`flex min-h-screen flex-col font-sans max-w-[95%] 2xl:max-w-[90%] lg:mx-auto lg:flex-row bg-black ${geistSans.variable} ${geistMono.variable} antialiased`}
       >
         <ThemeProvider
           attribute="class"
