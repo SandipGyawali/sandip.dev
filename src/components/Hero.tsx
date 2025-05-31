@@ -5,7 +5,7 @@ function Hero() {
   return (
     <section
       id="hero"
-      className="relative h-[calc(100dvh-8vh)] rounded-3xl mt-14 mb-10 md:mb-0 h-full flex items-center justify-center px-4 xl:px-0 overflow-hidden"
+      className="relative h-[calc(100vh-8vh)] rounded-3xl mt-14 mb-10 md:mb-0 h-full flex items-center justify-center px-4 xl:px-0 overflow-hidden"
     >
       {/* Background Video */}
       <video
@@ -14,7 +14,7 @@ function Hero() {
         muted
         playsInline
         autoPlay
-        className="absolute top-0 left-0 w-full h-dvh object-cover z-0"
+        className="absolute top-0 left-0 w-full h-full object-cover z-0"
       >
         <source src="/bg-video2.mp4" type="video/mp4" />
         Your browser does not support the video tag.
