@@ -39,9 +39,9 @@ function Contact() {
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.5 }}
-          className="space-y-3 flex flex-col"
+          className="space-y-3 text-[#e3ddda] flex flex-col"
         >
-          <h2 className="text-5xl text-white font-medium">
+          <h2 className="text-5xl font-bol">
             Let&apos;s Collaborate, <br />
             <span className="text-[#9e9e9e]">and Begin the work.</span>
           </h2>

@@ -13,6 +13,7 @@ import {
   TooltipProvider,
   TooltipTrigger,
 } from "./ui/tooltip";
+import Image from "next/image";
 
 interface FooterLinkInterface {
   href: string;
@@ -80,7 +81,14 @@ function Footer(): React.JSX.Element {
   return (
     <>
       <section id="footer" className={`relative w-full ${inter.className}`}>
-        <div className="mt-[20vh] divide-y lg:divide-y-0 divide-dashed px-4 lg:mx-auto lg:px-4 xl:px-0">
+        <Image
+          className="absolute opacity-15 rounded-3xl top-0 left-0 w-full h-full object-cover z-0"
+          src="/bg-image3.jpg"
+          fill
+          alt="."
+        />
+
+        <div className="mt-[20vh] pt-5 divide-y lg:divide-y-0 divide-dashed px-4 lg:mx-auto lg:px-4 xl:px-0">
           <div className="mb-8 w-fit mx-auto text-center border border-[#27272a] rounded-full px-4 flex items-center gap-3 py-2">
             <span className="relative flex size-3 items-center justify-center">
               <span className="absolute inline-flex h-full w-full animate-ping rounded-full bg-white opacity-75"></span>
@@ -143,20 +151,20 @@ function Footer(): React.JSX.Element {
           onMouseLeave={() => {
             setCursorVariant("default");
           }}
-          className="tracking-tight text-white text-center mt-10 text-[380px] font-bold w-full"
+          className="tracking-tight text-[#e3ddda] text-center mt-10 text-[380px] font-bold w-full"
         >
           Let&apos;s Talk
         </motion.h2>
 
-        <div className="mt-6 mb-10 flex items-center justify-between">
+        <div className="mt-6 mx-5 pb-5 mb-8 flex items-center justify-between">
           <Link
             href={"mailto:sandipgyawali100@gmail.com"}
-            className="text-white font-medium hover:underline text-xl tracking-wide"
+            className="text-[#e3ddda] font-medium hover:underline text-xl tracking-wide"
           >
             sandipgyawali100@gmail.com
           </Link>
 
-          <p className="text-white text-xl font-medium tracking-wide">
+          <p className="text-[#e3ddda] text-xl font-medium tracking-wide">
             © {new Date().getFullYear()} Sandip Gyawali
           </p>
 
@@ -167,7 +175,7 @@ function Footer(): React.JSX.Element {
                 behavior: "smooth",
               });
             }}
-            className="text-white text-xl tracking-wide cursor-pointer font-medium flex items-center gap-2 hover:underline transition duration-150 ease-linear"
+            className="text-[#e3ddda] text-xl tracking-wide cursor-pointer font-medium flex items-center gap-2 hover:underline transition duration-150 ease-linear"
           >
             <ArrowUp />
             Back to Top

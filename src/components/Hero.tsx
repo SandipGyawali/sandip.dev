@@ -1,14 +1,16 @@
 "use client";
-import { Plus } from "lucide-react";
+import { ArrowRight, Plus } from "lucide-react";
+import CircularText from "./ui/circular-text";
+import Image from "next/image";
 
 function Hero() {
   return (
     <section
       id="hero"
-      className="relative h-[calc(100vh-8vh)] rounded-3xl mt-14 mb-10 md:mb-0 h-full flex items-center justify-center px-4 xl:px-0 overflow-hidden"
+      className="relative h-[91vh] rounded-3xl mt-14 mb-10 md:mb-0 h-full flex items-center justify-center px-4 xl:px-0 overflow-hidden"
     >
       {/* Background Video */}
-      <video
+      {/* <video
         loop
         preload="auto"
         muted
@@ -18,27 +20,59 @@ function Hero() {
       >
         <source src="/bg-video2.mp4" type="video/mp4" />
         Your browser does not support the video tag.
-      </video>
+      </video> */}
+      <Image
+        className="absolute top-0 left-0 w-full h-full object-cover z-0"
+        src="/bg-image2.jpg"
+        fill
+        decoding="async"
+        loading="eager"
+        alt="."
+      />
 
       {/* Foreground Content */}
       <div className="relative h-full w-full z-10 p-8">
-        <div className="text-white mt-8 h-fit w-fit gap-52 flex flex-row items-end leading-none justify-between">
+        <div className="text-[#e3ddda] mt-8 h-fit w-full flex flex-row items-start leading-none justify-between">
           <h1 className="text-[200px] font-bold tracking-tight">
             Sandip
             <sup className="text-[80px] h-full"> ®</sup>
           </h1>
 
-          <div className="flex flex-col text-lg my-8 items-start h-full font-bold tracking-tight gap-3">
-            <p>SEO Optimization</p>
-            <p>Branding and Identity</p>
-            <p>Web Design and Development</p>
+          <div>
+            <CircularText
+              text="*Let’s*Collaborate"
+              onHover="speedUp"
+              spinDuration={30}
+              className="uppercase"
+            />
           </div>
         </div>
 
         <div className="flex mt-32 items-center w-full justify-between">
           {[1, 2, 3, 4, 5, 6].map((val) => (
-            <Plus key={val} className="text-[#9e9e9e] size-8" />
+            <Plus key={val} className="text-white/70 size-8" />
           ))}
+        </div>
+
+        <div className="h-fit mt-20 flex items-center gap-4 justify-start">
+          <h2 className="px-5 p-0 bg-[#e3ddda] text-[#242424] uppercase rounded-lg text-[90px] flex items-center h-[115px] font-bold tracking-tight">
+            VISITORS
+          </h2>
+          <ArrowRight className="text-[#e3ddda]" size={80} />
+          <h2 className="px-5 bg-[#e3ddda] text-[#242424] uppercase rounded-lg text-[90px] h-[105px] flex items-center justify-between font-bold tracking-tight">
+            CUSTOMERS
+          </h2>
+        </div>
+
+        <div className="text-white h-full flex justify-between items-end h-[199px]">
+          <p className="text-lg text-[#e3ddda] font-sans hover:underline font-medium">
+            Based in Kathmandu <br />
+            and Working Worldwide.
+          </p>
+
+          <p className="text-lg text-[#e3ddda] font-sans hover:underline font-medium text-end">
+            Passionate Developer <br /> Crafting Visually Captivating Websites
+          </p>
         </div>
       </div>
 

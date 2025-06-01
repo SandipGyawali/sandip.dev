@@ -39,8 +39,8 @@ function FAQItem({ question, answer, index }: FAQItemProps) {
         <h3
           className={cn(
             "text-base font-medium transition-colors duration-200 text-left",
-            "text-white text-lg",
-            isOpen && "text-white"
+            "text-[#e3ddda] text-lg",
+            isOpen && "text-[#e3ddda]"
           )}
         >
           {question}
@@ -168,9 +168,9 @@ function Faq02() {
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.5 }}
-          className="space-y-3 flex flex-col"
+          className="space-y-3 text-[#e3ddda] font-bold flex flex-col"
         >
-          <h2 className="text-5xl text-white font-medium">
+          <h2 className="text-5xl">
             Questions, <span className="text-[#9e9e9e]">Answers.</span>
           </h2>
           <span className="text-[#949494] font-medium">

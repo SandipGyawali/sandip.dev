@@ -51,7 +51,7 @@ function About() {
               onMouseLeave={() => {
                 setCursorVariant("default");
               }}
-              className="text-white text-7xl font-semibold"
+              className="text-[#e3ddda] text-7xl font-semibold"
             >
               Meet Sandip.
             </motion.h2>
