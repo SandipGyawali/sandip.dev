@@ -28,9 +28,10 @@ function MainPage() {
             "✧˖ Animation ✧˖ Full-Stack Development ✧˖ Deployment ✧˖ Performance Tuning",
           ]}
           velocity={50}
-          className="bg-white text-transparent bg-clip-text"
+          className="bg-[#e3ddda] text-transparent bg-clip-text"
         />
         <Faq02 />
+
         <TechStackTestimonial />
         <Contact />
         {/* <Experience />

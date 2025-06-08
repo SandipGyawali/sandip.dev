@@ -1,7 +1,5 @@
-import { ArrowDownCircle, Bot, Sparkles } from "lucide-react";
-import BarChart from "./ui/bar.chart";
+import { Sparkles } from "lucide-react";
 import { cn } from "@/lib/utils";
-import Ticker from "./ui/ticker";
 import ImageCard from "./ui/image-card";
 import { motion } from "framer-motion";
 import ShinyText from "./ui/shiny.text";
@@ -70,14 +68,15 @@ function BentoCard({
 
 function FeatureOne() {
   return (
-    <BentoCard className="flex flex-col bg-[#121212] h-[500px]">
-      <div className="font-bold text-yellow-700">Highly rated</div>
+    <BentoCard className="flex flex-col bg-[#121212] bg-white h-[500px]">
+      <></>
+      {/* <div className="font-bold text-yellow-700">Highly rated</div>
       <div className="mt-auto flex justify-end">
         <div className="text-4xl font-black text-black/60 md:text-7xl">
           <Ticker value="4.8" className="text-white" />
         </div>{" "}
         <sup className="text-xl text-white">★</sup>
-      </div>
+      </div> */}
     </BentoCard>
   );
 }
@@ -139,8 +138,9 @@ function FeatureSix() {
 
 function FeatureSeven() {
   return (
-    <BentoCard className="flex flex-col gap-2 border border-white/20">
-      <div className="w-full -rotate-1 rounded-full border-rose-400 bg-rose-400 py-2 text-center font-semibold text-white md:-rotate-3">
+    <BentoCard className="bg-white flex flex-col gap-2 border border-white/20">
+      <></>
+      {/* <div className="w-full -rotate-1 rounded-full border-rose-400 bg-rose-400 py-2 text-center font-semibold text-white md:-rotate-3">
         Javascript
       </div>
       <div className="w-full rotate-1 rounded-full border-rose-400 bg-rose-400 py-2 text-center font-semibold text-white md:rotate-3">
@@ -148,7 +148,7 @@ function FeatureSeven() {
       </div>
       <div className="w-full rounded-full border-rose-400 bg-rose-400 py-2 text-center font-semibold text-white">
         NextJS
-      </div>
+      </div> */}
     </BentoCard>
   );
 }
@@ -187,7 +187,7 @@ export default function BentoMain() {
           transition={{ duration: 0.5 }}
           className="space-y-3 flex flex-col"
         >
-          <h2 className="text-5xl text-white font-medium">
+          <h2 className="text-5xl text-[#e3ddda] font-bold">
             What I’ve Been, <span className="text-[#9e9e9e]">Working On. </span>
           </h2>
           <span className="text-[#949494] font-medium">
