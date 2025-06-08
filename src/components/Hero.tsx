@@ -7,7 +7,7 @@ function Hero() {
   return (
     <section
       id="hero"
-      className="relative h-[91vh] rounded-3xl mt-14 mb-10 md:mb-0 h-full flex items-center justify-center px-4 xl:px-0 overflow-hidden"
+      className="relative h-[92vh] rounded-3xl mt-14 mb-10 md:mb-0 h-full flex items-center justify-center px-4 xl:px-0 overflow-hidden"
     >
       {/* Background Video */}
       {/* <video
@@ -64,7 +64,7 @@ function Hero() {
           </h2>
         </div>
 
-        <div className="text-white h-full flex justify-between items-end h-[199px]">
+        <div className="text-white h-full flex justify-between items-end h-[180px]">
           <p className="text-lg text-[#e3ddda] font-sans hover:underline font-medium">
             Based in Kathmandu <br />
             and Working Worldwide.
