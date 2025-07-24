@@ -4,7 +4,8 @@ import "./globals.css";
 import { Toaster } from "sonner";
 import { ThemeProvider } from "@/providers/theme.provider";
 import { metaData } from "@/data/metadata";
-import ScrollWrapper from "@/providers/scroll.wrapper";
+import Header from "@/components/Header";
+import Footer from "@/components/Footer";
 
 const geistSans = localFont({
   src: "./fonts/GeistVF.woff",
@@ -35,7 +36,7 @@ export default function RootLayout({
     <html lang="en" suppressHydrationWarning className="">
       <link rel="icon" href="/logo.png" sizes="any" />
       <body
-        className={`flex min-h-screen flex-col font-sans max-w-[95%] 2xl:max-w-[90%] lg:mx-auto lg:flex-row bg-black ${geistSans.variable} ${geistMono.variable} antialiased`}
+        className={`flex min-h-screen flex-col font-sans max-w-3xl m-auto px-4 xs:px-10 ${geistSans.variable} ${geistMono.variable} antialiased`}
       >
         <ThemeProvider
           attribute="class"
@@ -43,10 +44,12 @@ export default function RootLayout({
           enableSystem={false}
           disableTransitionOnChange
         >
-          <ScrollWrapper>
+          <Header />
+          <main className="w-full h-full justify-center items-center m-auto py-4 xs:py-10">
             {children}
-            <Toaster richColors closeButton position="bottom-right" />
-          </ScrollWrapper>
+          </main>
+          <Footer />
+          <Toaster richColors closeButton position="bottom-right" />
         </ThemeProvider>
       </body>
     </html>
