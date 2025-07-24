@@ -19,7 +19,7 @@ function Footer() {
       }
     >
       <div className="flex flex-wrap items-center justify-center">
-        <a>By:</a>
+        <a>Designed & built by</a>
         <div className="w-1" />
         {github}
         <p className="mx-3 hidden 2xs:block">|</p>
