@@ -22,6 +22,32 @@ export const webApps: AppItemType[] = [
     ],
   },
   {
+    title: "Event Participant",
+    description:
+      "Participated in the HULT Prize ASCOL 2023-24, Collaborated with a multidisciplinary team to design a smart traffic management solution aimed at reducing urban congestion, lowering emissions, and enhancing commuter safety.",
+    company: "Hult Prize at Amrit Science Campus",
+    location: "Kathmandu, Nepal",
+    image: "/hult.png", // Replace with actual image path if hosted
+    path: "https://www.hultprize.org", // Official Hult Prize website
+    tags: [
+      "Teamwork",
+      "Public Speaking",
+      "Leadership",
+      "Collaboration",
+      "Innovation",
+    ],
+  },
+  {
+    title: "Full Stack Developer",
+    description:
+      "Scalable PWA built with Next.js for mock testing, payments, and interviews. Migrated backend from PHP to tRPC for fully type-safe API development.",
+    company: "Chhangmi Consultancy Ltd",
+    location: "Kathmandu, Nepal",
+    image: "/chhangmi.svg", // Add logo or relevant image
+    path: "https://chhangmi.edu.np", // Replace with real URL if available
+    tags: ["Next.js", "PWA", "tRPC", "TypeScript", "Zod"],
+  },
+  {
     title: "Frontend Developer",
     description:
       "An advanced admin dashboard with thermal invoice printing, analytics, and real-time updates. Deployed with Nginx + HTTPS and built with performance in mind.",
@@ -42,15 +68,5 @@ export const webApps: AppItemType[] = [
       "Nginx",
       "Certbot",
     ],
-  },
-  {
-    title: "Full Stack Developer",
-    description:
-      "Scalable PWA built with Next.js for mock testing, payments, and interviews. Migrated backend from PHP to tRPC for fully type-safe API development.",
-    company: "Chhangmi Consultancy Ltd",
-    location: "Kathmandu, Nepal",
-    image: "/chhangmi.svg", // Add logo or relevant image
-    path: "https://chhangmi.edu.np", // Replace with real URL if available
-    tags: ["Next.js", "PWA", "tRPC", "TypeScript", "Zod"],
   },
 ];
