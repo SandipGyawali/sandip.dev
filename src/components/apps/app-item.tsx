@@ -55,12 +55,13 @@ function AppItem({
                 href={card.link ?? card.path}
                 target={!!card.link ? "_blank" : undefined}
                 className={
-                  "text-lg font-medium cursor-pointer hover:underline" +
+                  "text-lg font-semibold cursor-pointer hover:underline" +
                   (!!card.link ? " after:content-['__↗']" : "")
                 }
               >
                 {card.title}
               </Link>
+
               {!!card.github && (
                 <a
                   href={card.github}
@@ -100,9 +101,16 @@ function AppItem({
                 </a>
               )}
             </div>
+            <div className="flex flex-col sm:flex-row sm:items-center gap-1 sm:gap-2 mt-1">
+              <p className="text-sm font-semibold">{card.company}</p>
+              <span className="hidden sm:block text-neutral-400">•</span>
+              <p className="text-sm font-medium opacity-70">{card.location}</p>
+            </div>
             <div className="h-1.5" />
             <div className="text-base leading-relaxed">
-              <span className="opacity-70 pr-2">{card.description}</span>
+              <span className="opacity-70 pr-2 text-sm font-medium">
+                {card.description}
+              </span>
               {!hideLearnMore && (
                 <Link
                   href={card.path ?? ""}

@@ -1,6 +1,8 @@
 type AppItemType = {
   title: string;
   description: string;
+  company?: string;
+  location?: string;
   icon?: string;
   image: string;
   path: string;

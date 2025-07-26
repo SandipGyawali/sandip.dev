@@ -5,14 +5,17 @@ import cardStyle from "@/styles/card";
 import Link from "next/link";
 import AppItem from "./app-item";
 import { mobileApps } from "./data/mobile-apps";
+import { webApps } from "./data/web-apps";
 
 function PreviewAppsList() {
+  const filteredApps = [...webApps, ...mobileApps];
+
   return (
     <div className={cardStyle}>
       <CardTitle icon={<BiDevices />} title="FEATURED" />
       <div className="h-8" />
       <div className="flex flex-wrap content-center gap-7">
-        {[...mobileApps.slice(0, 2)].map((card) => (
+        {[...filteredApps.slice(0, 2)].map((card) => (
           <AppItem key={card.title} card={card} />
         ))}
       </div>

@@ -8,7 +8,7 @@ const mail = "sandipgyawali100@gmail.com";
 const description = `${author}. Explore my personal portfolio, services and blogs.`;
 const og = `${url}/og.png`;
 const shortAbout =
-  "A software developer from Nepal interested in building web application.";
+  "CS/IT @Ascol | Full-Stack Developer & Builder | Exploring Startups";
 const about =
   "Currently interested on developing quality applications as solutions that effectively solve problems, rather than just providing solutions.";
 
