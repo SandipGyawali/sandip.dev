@@ -1,8 +1,7 @@
 "use client";
-
-import DesktopIcon from "@/assets/icons/desktop";
+// import DesktopIcon from "@/assets/icons/desktop";
+// import MobileIcon from "@/assets/icons/mobile";
 import DevicesIcon from "@/assets/icons/devices";
-import MobileIcon from "@/assets/icons/mobile";
 import cardStyle from "@/styles/card";
 import { scrollToTop } from "@/utils/window";
 import { useState } from "react";
@@ -16,14 +15,6 @@ function AllAppsList() {
     {
       name: "ALL",
       icon: <DevicesIcon />,
-    },
-    {
-      name: "WEB",
-      icon: <DesktopIcon />,
-    },
-    {
-      name: "MOBILE",
-      icon: <MobileIcon />,
     },
   ];
   const list =

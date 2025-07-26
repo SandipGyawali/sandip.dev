@@ -41,7 +41,7 @@ function Header() {
         <div
           className={
             btnStyle +
-            "text-base font-normal min-w-[200px] sm:min-w-0 text-start " +
+            "text-base font-semibold text-sm min-w-[200px] sm:min-w-0 text-start " +
             (isSelected ? "text-black dark:text-white" : "")
           }
         >
@@ -60,7 +60,7 @@ function Header() {
   });
 
   return (
-    <header className="w-full sticky top-0 !z-50 dark:bg-darker rounded-b-3xl sm:backdrop-blur-md sm:!bg-opacity-90 pt-5 mt-4">
+    <header className="w-full sticky top-0 !z-50 rounded-b-3xl sm:backdrop-blur-md sm:!bg-opacity-90 pt-5 mt-4">
       <div
         className={
           cardStyle +

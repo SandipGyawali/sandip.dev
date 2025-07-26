@@ -19,10 +19,6 @@ function Footer() {
       }
     >
       <div className="flex flex-wrap items-center justify-center">
-        <a>By:</a>
-        <div className="w-1" />
-        {github}
-        <p className="mx-3 hidden 2xs:block">|</p>
         <a className={onHoverStyle + " flex"} target="_blank" href={sourceCode}>
           Source code
           <div className="w-1.5" />

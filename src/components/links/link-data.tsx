@@ -1,7 +1,7 @@
 import {
   githubIcon,
-  instagramIcon,
   linkedinIcon,
+  upWorkIcon,
   xIcon,
 } from "@/assets/icons/all-social";
 import linksMetadata from "@/metadata/links";
@@ -20,10 +20,10 @@ const linksCards = [
     icon: linkedinIcon,
   },
   {
-    title: "Instagram",
+    title: "UpWork",
     className: "!bg-transparent",
-    href: linksMetadata.instagram,
-    icon: instagramIcon,
+    href: linksMetadata.upwork,
+    icon: upWorkIcon,
   },
   {
     title: "X",

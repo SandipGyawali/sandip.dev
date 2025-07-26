@@ -36,11 +36,11 @@ export default function RootLayout({
     <html lang="en" suppressHydrationWarning className="">
       <link rel="icon" href="/logo.png" sizes="any" />
       <body
-        className={`flex min-h-screen flex-col font-sans max-w-3xl m-auto px-4 xs:px-10 ${geistSans.variable} ${geistMono.variable} antialiased`}
+        className={`flex min-h-screen bg-[#f2f2f2] dark:bg-[#0d0d0d] flex-col font-sans max-w-3xl m-auto px-4 xs:px-10 ${geistSans.variable} ${geistMono.variable} antialiased`}
       >
         <ThemeProvider
           attribute="class"
-          defaultTheme="light"
+          defaultTheme="dark"
           enableSystem={false}
           disableTransitionOnChange
         >
