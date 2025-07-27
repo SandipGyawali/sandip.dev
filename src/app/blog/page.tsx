@@ -20,11 +20,12 @@ function Page() {
 
   return (
     <>
-      <BlogSection />
+      {/* <BlogSection /> */}
       <div
         className={`relative lg:max-w-6xl px-4 xl:px-0 mx-auto ${inter.className}`}
       >
-        <div className="flex flex-col items-start justify-start space-y-4">
+        Work in Progress
+        {/* <div className="flex flex-col items-start justify-start space-y-4">
           <div className="space-y-2">
             <div className="flex flex-row gap-2 w-fit items-center inline-block rounded-lg bg-foreground text-background px-2.5 py-1.5 text-xs font-semibold">
               <FaClipboardList className="size-4" />
@@ -39,8 +40,7 @@ function Page() {
               way—designed to inspire builders and makers alike.
             </p>
           </div>
-        </div>
-
+        </div> */}
         {/* <Tabs
           defaultValue={Array.from(blogCategories)?.[0]}
           className="border-x mt-5 border-dashed border-neutral-300 dark:border-neutral-600 max-w-full w-full"
@@ -58,7 +58,6 @@ function Page() {
               ))}
             </SelectContent>
           </Select> */}
-
         {/* desktop-tab */}
         {/* <TabsList className="hidden md:block w-full border-b border-dashed border-neutral-300 dark:border-neutral-600 p-0 bg-background justify-start border-b rounded-none">
             {Array.from(blogCategories).map((tab) => (
@@ -73,7 +72,6 @@ function Page() {
               </TabsTrigger>
             ))}
           </TabsList> */}
-
         {/* {Array.from(blogCategories).map((tab) => (
             <TabsContent key={uuid()} value={tab} className="px-3">
               <BlogPostList posts={blogs} />
