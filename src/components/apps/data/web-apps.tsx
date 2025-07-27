@@ -12,7 +12,6 @@ export const webApps: AppItemType[] = [
     tags: [
       "Next.js",
       "ShadCN UI",
-      "Origin UI",
       "React Query",
       "jsPDF",
       "Zod",

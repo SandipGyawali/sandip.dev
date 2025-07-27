@@ -1,5 +1,6 @@
 import { shortAbout } from "@/constants/strings";
 import CardButton from "@/shared/components/buttons/card-button";
+import ResumeButton from "@/shared/components/buttons/resume-button";
 import cardStyle from "@/styles/card";
 import { scrollToTop } from "@/utils/window";
 import Link from "next/link";
@@ -28,15 +29,20 @@ export default function PreviewAboutCard({
       <span className="text-base font-normal opacity-70 leading-relaxed mt-3 mb-6">
         {shortAbout}
       </span>
-      <Link
-        onClick={() => {
-          scrollToTop();
-        }}
-        href="/about"
-        className="hover:animate-scale"
-      >
-        <CardButton title="LEARN MORE" />
-      </Link>
+
+      <div className="flex items-center gap-2">
+        <Link
+          onClick={() => {
+            scrollToTop();
+          }}
+          href="/about"
+          className="hover:animate-scale"
+        >
+          <CardButton title="LEARN MORE" />
+        </Link>
+
+        <ResumeButton />
+      </div>
     </div>
   );
 }

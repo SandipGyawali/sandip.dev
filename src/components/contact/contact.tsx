@@ -1,5 +1,4 @@
 "use client";
-
 import ArrowUpRightIcon from "@/assets/icons/arrow-up-right";
 import MailIcon from "@/assets/icons/mail";
 import { mail } from "@/constants/strings";

@@ -1,8 +1,8 @@
 import { author, shortAbout } from "@/constants/strings";
 import CardButton from "@/shared/components/buttons/card-button";
 import CardTitle from "@/shared/components/titles/card-title";
-import cardStyle from "@/shared/styles/card";
-import { scrollToTop } from "@/shared/utils/window";
+import cardStyle from "@/styles/card";
+import { scrollToTop } from "@/utils/window";
 import Image from "next/image";
 import Link from "next/link";
 

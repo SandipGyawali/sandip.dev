@@ -5,18 +5,9 @@ import {
   fetchAndSortBlogPosts,
 } from "@/lib/blogs";
 import { inter } from "../fonts/fonts";
-import { v4 as uuid } from "uuid";
-import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
-import BlurFade from "@/components/ui/magicui/blur-fade";
+// import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 import { FaClipboardList } from "react-icons/fa";
-import { BlogPostList } from "@/components/BlogPostList";
-import {
-  Select,
-  SelectContent,
-  SelectItem,
-  SelectTrigger,
-  SelectValue,
-} from "@/components/ui/select";
+// import { BlogPostList } from "@/components/BlogPostList";
 import { useState } from "react";
 
 function Page() {
@@ -29,36 +20,33 @@ function Page() {
 
   return (
     <>
-      <BlogSection />
-
+      {/* <BlogSection /> */}
       <div
         className={`relative lg:max-w-6xl px-4 xl:px-0 mx-auto ${inter.className}`}
       >
-        <BlurFade delay={0.04 * 13}>
-          <div className="flex flex-col items-start justify-start space-y-4">
-            <div className="space-y-2">
-              <div className="flex flex-row gap-2 w-fit items-center inline-block rounded-lg bg-foreground text-background px-2.5 py-1.5 text-xs font-semibold">
-                <FaClipboardList className="size-4" />
-                Category
-              </div>
-              <h2 className={`text-3xl font-bold tracking-tighter sm:text-5xl`}>
-                Categories
-              </h2>
-              <p className={`text-muted-foreground text-sm/relaxed`}>
-                Explore a collection of curated topics covering everything from
-                emerging tech and essential tools to the lessons learned along
-                the way—designed to inspire builders and makers alike.
-              </p>
+        Work in Progress
+        {/* <div className="flex flex-col items-start justify-start space-y-4">
+          <div className="space-y-2">
+            <div className="flex flex-row gap-2 w-fit items-center inline-block rounded-lg bg-foreground text-background px-2.5 py-1.5 text-xs font-semibold">
+              <FaClipboardList className="size-4" />
+              Category
             </div>
+            <h2 className={`text-3xl font-bold tracking-tighter sm:text-5xl`}>
+              Categories
+            </h2>
+            <p className={`text-muted-foreground text-sm/relaxed`}>
+              Explore a collection of curated topics covering everything from
+              emerging tech and essential tools to the lessons learned along the
+              way—designed to inspire builders and makers alike.
+            </p>
           </div>
-        </BlurFade>
-
-        <Tabs
+        </div> */}
+        {/* <Tabs
           defaultValue={Array.from(blogCategories)?.[0]}
           className="border-x mt-5 border-dashed border-neutral-300 dark:border-neutral-600 max-w-full w-full"
-        >
-          {/* Mobile Dropdown */}
-          <Select value={selectedCategory} onValueChange={setSelectedCategory}>
+        > */}
+        {/* Mobile Dropdown */}
+        {/* <Select value={selectedCategory} onValueChange={setSelectedCategory}>
             <SelectTrigger className="md:hidden w-full text-xs uppercase text-muted-foreground font-medium bg-background">
               <SelectValue placeholder="Select Category" />
             </SelectTrigger>
@@ -69,10 +57,9 @@ function Page() {
                 </SelectItem>
               ))}
             </SelectContent>
-          </Select>
-
-          {/* desktop-tab */}
-          <TabsList className="hidden md:block w-full border-b border-dashed border-neutral-300 dark:border-neutral-600 p-0 bg-background justify-start border-b rounded-none">
+          </Select> */}
+        {/* desktop-tab */}
+        {/* <TabsList className="hidden md:block w-full border-b border-dashed border-neutral-300 dark:border-neutral-600 p-0 bg-background justify-start border-b rounded-none">
             {Array.from(blogCategories).map((tab) => (
               <TabsTrigger
                 key={uuid()}
@@ -84,14 +71,13 @@ function Page() {
                 </span>
               </TabsTrigger>
             ))}
-          </TabsList>
-
-          {Array.from(blogCategories).map((tab) => (
+          </TabsList> */}
+        {/* {Array.from(blogCategories).map((tab) => (
             <TabsContent key={uuid()} value={tab} className="px-3">
               <BlogPostList posts={blogs} />
             </TabsContent>
-          ))}
-        </Tabs>
+          ))} */}
+        {/* </Tabs> */}
       </div>
     </>
   );
