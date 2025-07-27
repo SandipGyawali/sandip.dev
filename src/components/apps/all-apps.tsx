@@ -1,6 +1,4 @@
 "use client";
-// import DesktopIcon from "@/assets/icons/desktop";
-// import MobileIcon from "@/assets/icons/mobile";
 import DevicesIcon from "@/assets/icons/devices";
 import cardStyle from "@/styles/card";
 import { scrollToTop } from "@/utils/window";

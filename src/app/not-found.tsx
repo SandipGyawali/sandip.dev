@@ -1,8 +1,8 @@
 "use client";
 import { useEffect, useState } from "react";
-import { Button } from "@/components/ui/button";
 import NotFoundData from "../../public/404.json";
 import dynamic from "next/dynamic";
+import GoHomeButton from "@/shared/components/buttons/go-home-button";
 
 const Lottie = dynamic(() => import("lottie-react"), { ssr: false });
 
@@ -19,7 +19,7 @@ function NotFound() {
   return (
     <div
       className={`${isLoaded ? "opacity-100" : "opacity-0"} 
-         transition-opacity duration-1000 ease-in-out flex flex-col items-center justify-center w-full h-screen`}
+         transition-opacity duration-1000 ease-in-out flex flex-col items-center justify-center w-full h-full`}
     >
       <div className="w-full max-w-lg xl:max-w-xl">
         <Lottie
@@ -38,13 +38,7 @@ function NotFound() {
           We are sorry, but the page you requested was not found.
           <br /> Please check the URL or try again later.
         </p>
-        <Button
-          onClick={() => {
-            window.history.back();
-          }}
-        >
-          Return to Previous Tab
-        </Button>
+        <GoHomeButton />
       </div>
     </div>
   );
