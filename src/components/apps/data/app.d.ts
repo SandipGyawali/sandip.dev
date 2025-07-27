@@ -18,3 +18,14 @@ type AppItemType = {
 };
 
 export default AppItemType;
+
+type AppEducationItemType = {
+  title: string;
+  description: string;
+  time: string;
+  location: string;
+  image: string;
+  path: string;
+};
+
+export { AppEducationItemType };

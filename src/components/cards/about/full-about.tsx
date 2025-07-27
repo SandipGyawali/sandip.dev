@@ -1,4 +1,5 @@
 import { about } from "@/constants/strings";
+import ResumeButton from "@/shared/components/buttons/resume-button";
 import cardStyle from "@/styles/card";
 import Image from "next/image";
 
@@ -7,8 +8,8 @@ export default function FullAboutCard() {
     <div className={cardStyle + "!py-12 !px-4"}>
       <div className="w-full flex flex-col items-center justify-center text-center gap-3">
         <Image
-          className="rounded-full p-3 bg-teal-100/40 dark:bg-slate-500/20"
-          src="/me/smile-square.png"
+          className="rounded-full p-3 bg-gray-100 dark:bg-gray-800/50"
+          src="/sandip.png"
           alt="Sandip Gyawali"
           width={150}
           height={150}
@@ -30,6 +31,9 @@ export default function FullAboutCard() {
           </a>{" "}
           based in Nepal.
         </p>
+
+        <ResumeButton />
+
         <p className="text-[17px] text-neutral-500 2xs:px-2 xs:px-5 leading-relaxed">
           {about}
         </p>
