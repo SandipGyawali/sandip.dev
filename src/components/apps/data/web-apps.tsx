@@ -2,6 +2,25 @@ import AppItemType from "./app";
 
 export const webApps: AppItemType[] = [
   {
+    title: "Workshop Mentor",
+    description:
+      "Mentored participants during a 7-day intensive workshop organized by ASCOL IT Club. Delivered sessions on Web Development titled 'Design to Deployment', guided hands-on projects, provided one-on-one feedback, and helped participants build practical skills. Collaborated with fellow mentors to design an engaging and effective learning experience for 25+ attendees.",
+    company: "ASCOL IT Club",
+    location: "Kathmandu, Bāgmatī, Nepal",
+    image: "/ascol-it-club.jpeg", // Replace with actual logo path if available
+    path: "https://www.linkedin.com/in/sandip-gyawali-615681211/", // Replace with actual URL if available
+    tags: [
+      "Web Development",
+      "Mentorship",
+      "Team Collaboration",
+      "Public Speaking",
+      "Design to Deployment",
+      "HTML",
+      "CSS",
+      "JavaScript",
+    ],
+  },
+  {
     title: "Frontend Developer",
     description:
       "A robust hotel management platform built with Next.js, covering POS, inventory, billing, reservations, reports, and dashboards. Migrated from unstable Flutter system to a scalable Next.js stack.",
