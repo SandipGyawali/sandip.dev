@@ -4,7 +4,7 @@ export const webApps: AppItemType[] = [
   {
     title: "AI Fullstack Developer",
     description:
-      "Built a full-stack AI-powered networking tool that mapped Gmail contacts, scores relationship health across frequency & surfaces warm into with no manual entry. Added a standalone chat system using zola.chat tool for chat based AI email draft generation which can be sent directly with a single send button.",
+      "Built a full-stack AI-powered networking tool that mapped Gmail contacts, scores relationship health across frequency & surfaces warm into with no manual entry. Added a standalone chat system using zola.chat tool for chat based AI email draft generation which can be sent directly with a single send button. Built a AI pipeline using mastra for automated csv parsing for bulk contacts import at any format",
     company: "Wove",
     location: "United States",
     image: "/wove.svg", // Replace with actual logo path if available
@@ -15,7 +15,8 @@ export const webApps: AppItemType[] = [
       "NestJs",
       "NextJS",
       "SAAS",
-      "NextJS"
+      "NextJS",
+      "Mastra"
     ],
   },
   {
