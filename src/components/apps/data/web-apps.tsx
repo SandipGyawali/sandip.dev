@@ -2,6 +2,23 @@ import AppItemType from "./app";
 
 export const webApps: AppItemType[] = [
   {
+    title: "AI Fullstack Developer",
+    description:
+      "Built a full-stack AI-powered networking tool that mapped Gmail contacts, scores relationship health across frequency & surfaces warm into with no manual entry. Added a standalone chat system using zola.chat tool for chat based AI email draft generation which can be sent directly with a single send button.",
+    company: "Wove",
+    location: "United States",
+    image: "/wove.svg", // Replace with actual logo path if available
+    path: "https://www.linkedin.com/in/sandip-gyawali-615681211/", // Replace with actual URL if available
+    tags: [
+      "Web Development",
+      "AI",
+      "NestJs",
+      "NextJS",
+      "SAAS",
+      "NextJS"
+    ],
+  },
+  {
     title: "Workshop Mentor",
     description:
       "Mentored participants during a 7-day intensive workshop organized by ASCOL IT Club. Delivered sessions on Web Development titled 'Design to Deployment', guided hands-on projects, provided one-on-one feedback, and helped participants build practical skills. Collaborated with fellow mentors to design an engaging and effective learning experience for 25+ attendees.",
